@@ -1,0 +1,2063 @@
+
+%	-------------------------------------------------------------------------------
+%
+%			작성		
+%				2020년 
+%				12월 
+%				13일 
+%				일
+%
+%
+%
+%
+%
+%
+%	-------------------------------------------------------------------------------
+
+%	\documentclass[10pt,xcolor=pdftex,dvipsnames,table]{beamer}
+%	\documentclass[10pt,blue,xcolor=pdftex,dvipsnames,table,handout]{beamer}
+%	\documentclass[14pt,blue,xcolor=pdftex,dvipsnames,table,handout]{beamer}
+	\documentclass[aspectratio=1610,20pt,xcolor=pdftex,dvipsnames,table,handout]{beamer}
+%	\documentclass[aspectratio=169,17pt,xcolor=pdftex,dvipsnames,table,handout]{beamer}
+%	\documentclass[aspectratio=149,17pt,xcolor=pdftex,dvipsnames,table,handout]{beamer}
+%	\documentclass[aspectratio=54,17pt,xcolor=pdftex,dvipsnames,table,handout]{beamer}
+%	\documentclass[aspectratio=43,17pt,xcolor=pdftex,dvipsnames,table,handout]{beamer}
+%	\documentclass[aspectratio=32,17pt,xcolor=pdftex,dvipsnames,table,handout]{beamer}
+
+		% Font Size
+		%	default font size : 11 pt
+		%	8,9,10,11,12,14,17,20
+		%
+		% 	put frame titles 
+		% 		1) 	slideatop
+		%		2) 	slide centered
+		%
+		%	navigation bar
+		% 		1)	compress
+		%		2)	uncompressed
+		%
+		%	Color
+		%		1) blue
+		%		2) red
+		%		3) brown
+		%		4) black and white	
+		%
+		%	Output
+		%		1)  	[default]	
+		%		2)	[handout]		for PDF handouts
+		%		3) 	[trans]		for PDF transparency
+		%		4)	[notes=hide/show/only]
+
+		%	Text and Math Font
+		% 		1)	[sans]
+		% 		2)	[sefif]
+		%		3) 	[mathsans]
+		%		4)	[mathserif]
+
+
+		%	---------------------------------------------------------	
+		%	슬라이드 크기 설정 ( 128mm X 96mm )
+		%	---------------------------------------------------------	
+%			\setbeamersize{text margin left=2mm}
+%			\setbeamersize{text margin right=2mm}
+
+		%	---------------------------------------------------------	
+		%	슬라이드 크기 설정 ( 128mm X 96mm )
+		%	---------------------------------------------------------	
+
+%			% Format presentation size to A4
+%			\usepackage[size=a4]{beamerposter}		% A4용지 크기 사용
+			\geometry{paper=a5paper}
+%			% Format presentation size to A4 길게
+%			\geometry{paper=a4paper, landscape}
+
+			\setbeamersize{text margin left=10mm}
+			\setbeamersize{text margin right=10mm}
+
+
+	%	========================================================== 	Package
+		\usepackage{kotex}						% 한글 사용
+		\usepackage{amssymb,amsfonts,amsmath}	% 수학 수식 사용
+		\usepackage{color}					%
+		\usepackage{colortbl}					%
+
+		\usepackage{caption}		% 테이블 사용 건 2020.10.22
+		\usepackage{tabularx} 	% 테이블 사용 건 2020.10.22
+
+
+	%		========================================================= 	note 옵션인 
+	%			\setbeameroption{show only notes}
+		
+
+	%		========================================================= 	Theme
+
+		%	---------------------------------------------------------	
+		%	전체 테마
+		%	---------------------------------------------------------	
+		%	테마 명명의 관례 : 도시 이름
+%			\usetheme{default}			%
+%			\usetheme{Madrid}    		%
+%			\usetheme{CambridgeUS}    	% -red, no navigation bar
+%			\usetheme{Antibes}			% -blueish, tree-like navigation bar
+
+		%	----------------- table of contents in sidebar
+			\usetheme{Berkeley}		% -blueish, table of contents in sidebar
+									% 개인적으로 마음에 듬
+
+%			\usetheme{Marburg}			% - sidebar on the right
+%			\usetheme{Hannover}		% 왼쪽에 마크
+%			\usetheme{Berlin}			% - navigation bar in the headline
+%			\usetheme{Szeged}			% - navigation bar in the headline, horizontal lines
+%			\usetheme{Malmoe}			% - section/subsection in the headline
+
+%			\usetheme{Singapore}
+%			\usetheme{Amsterdam}
+
+		%	---------------------------------------------------------	
+		%	색 테마
+		%	---------------------------------------------------------	
+%			\usecolortheme{albatross}	% 바탕 파란
+%			\usecolortheme{crane}		% 바탕 흰색
+%			\usecolortheme{beetle}		% 바탕 회색
+%			\usecolortheme{dove}		% 전체적으로 흰색
+%			\usecolortheme{fly}		% 전체적으로 회색
+%			\usecolortheme{seagull}	% 휜색
+%			\usecolortheme{wolverine}	& 제목이 노란색
+%			\usecolortheme{beaver}
+
+		%	---------------------------------------------------------	
+		%	Inner Color Theme 			내부 색 테마 ( 블록의 색 )
+		%	---------------------------------------------------------	
+
+%			\usecolortheme{rose}		% 흰색
+%			\usecolortheme{lily}		% 색 안 칠한다
+%			\usecolortheme{orchid} 	% 진하게
+
+		%	---------------------------------------------------------	
+		%	Outter Color Theme 		외부 색 테마 ( 머리말, 고리말, 사이드바 )
+		%	---------------------------------------------------------	
+
+%			\usecolortheme{whale}		% 진하다
+%			\usecolortheme{dolphin}	% 중간
+%			\usecolortheme{seahorse}	% 연하다
+
+		%	---------------------------------------------------------	
+		%	Font Theme 				폰트 테마
+		%	---------------------------------------------------------	
+%			\usfonttheme{default}		
+			\usefonttheme{serif}			
+%			\usefonttheme{structurebold}			
+%			\usefonttheme{structureitalicserif}			
+%			\usefonttheme{structuresmallcapsserif}			
+
+
+
+		%	---------------------------------------------------------	
+		%	Inner Theme 				
+		%	---------------------------------------------------------	
+
+%			\useinnertheme{default}
+			\useinnertheme{circles}		% 원문자			
+%			\useinnertheme{rectangles}		% 사각문자			
+%			\useinnertheme{rounded}			% 깨어짐
+%			\useinnertheme{inmargin}			
+
+
+
+
+		%	---------------------------------------------------------	
+		%	이동 단추 삭제
+		%	---------------------------------------------------------	
+%			\setbeamertemplate{navigation symbols}{}
+
+		%	---------------------------------------------------------	
+		%	문서 정보 표시 꼬리말 적용
+		%	---------------------------------------------------------	
+%			\useoutertheme{infolines}
+
+
+			
+	%	---------------------------------------------------------- 	배경이미지 지정
+%			\pgfdeclareimage[width=\paperwidth,height=\paperheight]{bgimage}{./fig/Chrysanthemum.jpg}
+%			\setbeamertemplate{background canvas}{\pgfuseimage{bgimage}}
+
+		%	---------------------------------------------------------	
+		% 	본문 글꼴색 지정
+		%	---------------------------------------------------------	
+%			\setbeamercolor{normal text}{fg=purple}
+%			\setbeamercolor{normal text}{fg=red!80}	% 숫자는 투명도 표시
+
+
+		%	---------------------------------------------------------	
+		%	itemize 모양 설정
+		%	---------------------------------------------------------	
+%			\setbeamertemplate{items}[ball]
+%			\setbeamertemplate{items}[circle]
+%			\setbeamertemplate{items}[rectangle]
+
+
+
+
+
+
+		\setbeamercovered{dynamic}
+
+
+
+
+
+		% --------------------------------- 	문서 기본 사항 설정
+		\setcounter{secnumdepth}{3} 		% 문단 번호 깊이
+		\setcounter{tocdepth}{3} 			% 문단 번호 깊이
+
+
+
+
+% ------------------------------------------------------------------------------
+% Begin document (Content goes below)
+%
+%
+% ------------------------------------------------------------------------------
+	\begin{document}
+	
+
+			\title{ GitHub }
+			\author{ 김대희 }
+			\date{ 
+					2020년 
+					12월 
+					21일
+					월요일  
+					} 
+
+
+% -----------------------------------------------------------------------------
+%		개정 내용
+% -----------------------------------------------------------------------------
+%
+%		2020년 12월 13일 첫제작
+%		2020년 12월 14일 프라스틱 링 바인더용으로 편집
+%		2020.12.21 전반적인 내용 수정
+
+
+	%	==========================================================
+	%
+	%	----------------------------------------------------------
+		\begin{frame}[plain]
+		\titlepage
+		\end{frame}
+
+
+		\begin{frame} [plain]{목차}
+		\tableofcontents%
+
+%			\setlength{\leftmargini}{ 2em}			
+%			\begin{itemize}
+%
+%				\item [part1] \ref{part1}	개요
+%				\item [part2] \ref{part2}	연락처
+%				\item [part3] \ref{part3}	리눅스
+%				\item [part4] \ref{part4}	좋은 문구
+%%				\item [part5] \ref{part5}	출입문			
+%%				\item [part6] \ref{part6}	일반사이트		
+%%				\item [part7] \ref{part7}	쇼핑 사이트		
+%
+%			\end{itemize}
+		\end{frame}
+
+
+	%	----------------------------------------------------------
+		\begin{frame} [t,plain]
+		\frametitle{}
+		\end{frame}			
+
+	%	----------------------------------------------------------
+		\begin{frame} [t,plain]
+		\frametitle{}
+		\end{frame}			
+					
+
+
+
+	%	========================================================== 1 개요
+		\part{개요 }
+		\frame{\partpage}
+
+\label{part1} 	%  개요
+
+
+	%	---------------------------------------------------------- 2 목차
+		\begin{frame} [plain]{목차}
+		\tableofcontents%
+		\end{frame}
+
+
+		
+
+	%	----------------------------------------------------------  개요
+	%		Frame
+	%	----------------------------------------------------------
+		\section{개요}
+
+
+	%	---------------------------------------------------------- 3 개요
+		\begin{frame} [t,plain]
+%		\frametitle{개요}
+
+			\begin{block} {개요}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 2008
+				\item Octo Cat
+				\item 리누스 토발즈가 리눅스의 소스코드 관리응 위해
+				\item Linus Torralds
+				\item 깃은 지옥에서 온 관리자
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}						
+
+
+	%	---------------------------------------------------------- 
+	%		Frame
+	%	----------------------------------------------------------
+		\section{목적}
+
+	%	---------------------------------------------------------- 4 	목적
+		\begin{frame} [t,plain]
+%		\frametitle{목적}
+
+			\begin{block} {목적}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 버전관리 version control
+				\item 백업 Backup
+				\item 협업 callaboration
+
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}			
+
+
+	%	---------------------------------------------------------- 단축키
+	%		Frame
+	%	----------------------------------------------------------
+		\section{단축키}
+
+	%	---------------------------------------------------------- 5	단축키
+		\begin{frame} [t,plain]
+%		\frametitle{단축키}
+
+			\begin{block} {단축키}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 붙이기 shift + Ins
+				\item Full screen 	Alt+F11
+				\item Flip screen 	Alt+F12 \\.
+				\item Copy 	\hrulefill 	Ctrl + Ins
+				\item Paste	\hrulefill 	Shift + Ins
+				\item Select All \hrulefill 	
+				\item Save as Image \hrulefill 	\\.
+
+				\item Search	\hrulefill 	Alt + F3
+				\item Reset	\hrulefill 	Alt + F8
+
+				\item Default size	\hrulefill 	Alt + F3
+				\item Scrollbar		\hrulefill 	
+				\item Full Screen	\hrulefill 	Alt + F11
+				\item Flip Screen	\hrulefill 	Alt + F12 \\ .
+
+				\item Option		\hrulefill 	
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}			
+
+
+	%	---------------------------------------------------------- 깃  회원 가입
+	%		Frame
+	%	----------------------------------------------------------
+		\section{깃  회원 가입}
+
+
+	%	---------------------------------------------------------- 6	깃  회원 가입
+		\begin{frame} [t,plain]
+%		\frametitle{깃  회원 가입}
+
+			\begin{block} {깃  회원 가입}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 사용자 이름 \\ kim dae hee 5609
+				\item 이메일 주소 \\ h 010 3839 5609 @ g mail . com
+				\item 비번 \\  h . 789 456 123
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}			
+
+
+	%	---------------------------------------------------------- 깃 환경설정
+	%		Frame
+	%	----------------------------------------------------------
+		\section{깃 환경설정}
+
+
+	%	---------------------------------------------------------- 7	깃 환경설정하기
+		\begin{frame} [t,plain]
+%		\frametitle{깃 환경설정}
+
+			\begin{block} {깃 환경설정}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item git config
+				\item git config - - global user.name "kimdaehee5609"
+				\item git config - - global user.email "h01038395609@gmail.com"
+				\item 
+			\end{itemize}
+			\end{block}						
+
+
+		\end{frame}			
+
+
+	%	---------------------------------------------------------- 깃 사용 환경
+	%		Frame
+	%	----------------------------------------------------------
+		\section{깃 사용 환경}
+
+	%	---------------------------------------------------------- 7	깃 환경설정하기
+		\begin{frame} [t,plain]
+		\frametitle{깃 사용 설정}
+
+			\begin{block} {깃 GUI : 그래픽 유저 인터페이스}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+
+			\begin{block} {깃 CLI : 커멘드 라인 인터페이스 }
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}			
+
+
+
+
+	%	========================================================== %	종류
+	%												%
+	%												%
+	%												%
+	%	========================================================== %	1
+		\part{종류 }
+		\frame{\partpage}
+
+\label{part1} 	%  차 시간 정리
+
+
+	%	---------------------------------------------------------- 2 목차
+		\begin{frame} [plain]{목차}
+		\tableofcontents%
+		\end{frame}
+
+
+	%	---------------------------------------------------------- 깃 프로그램 종류
+	%		Frame
+	%	----------------------------------------------------------
+		\section{깃 프로그램 종류}
+
+
+	%	---------------------------------------------------------- 3	깃 프로그램 종류
+		\begin{frame} [t,plain]
+%		\frametitle{깃 프로그램 종류}
+
+			\begin{block} {깃 프로그램 종류}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item htts : // git - scm .  com
+				\item Git-2.29.2.3-64-bit 
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}						
+
+
+	%	---------------------------------------------------------- 깃허브 데스크톱
+	%		Frame
+	%	----------------------------------------------------------
+		\section{깃허브 데스크톱}
+
+	%	---------------------------------------------------------- 4	깃허브 데스크톱
+		\begin{frame} [t,plain]
+%		\frametitle{깃허브 데스크톱}
+
+			\begin{block} {깃허브 데스크톱}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}						
+
+
+	%	---------------------------------------------------------- 토터스깃
+	%		Frame
+	%	----------------------------------------------------------
+		\section{토터스깃}
+
+
+	%	---------------------------------------------------------- 5	토터스깃
+		\begin{frame} [t,plain]
+%		\frametitle{토터스깃}
+
+			\begin{block} {토터스깃}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}						
+
+	%	---------------------------------------------------------- 소스트리
+	%		Frame
+	%	----------------------------------------------------------
+		\section{소스트리}
+
+
+	%	---------------------------------------------------------- 6 	소스트리
+		\begin{frame} [t,plain]
+%		\frametitle{소스트리}
+
+			\begin{block} {소스트리}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item https : // www.sourcetreeapp.com /
+				\item SourceTreeSetup-3.3.9.exe
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}						
+
+
+	%	---------------------------------------------------------- 비주얼 스튜디오 코드
+	%		Frame
+	%	----------------------------------------------------------
+		\section{비주얼 스튜디오 코드}
+
+
+	%	---------------------------------------------------------- 7	비주얼 스튜디오 코드
+		\begin{frame} [t,plain]
+%		\frametitle{비주얼 스튜디오 코드}
+
+			\begin{block} {비주얼 스튜디오 코드}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item https://code.visualstudio.com/
+				\item VSCodeUserSetup-x64-1.52.1.exe
+				\item  한국어 설정
+
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}						
+
+
+	%	---------------------------------------------------------- VIM
+	%		Frame
+	%	----------------------------------------------------------
+		\section{VIM}
+
+
+	%	---------------------------------------------------------- 8	VIM
+		\begin{frame} [t,plain]
+%		\frametitle{VIM}
+
+			\begin{block} {VIM}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item vim
+				\item : 
+				\item : w
+				\item : q
+				\item : wq
+				\item : q!
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}						
+
+
+
+	%	========================================================== %	리눅스
+	%												%
+	%												%
+	%												%
+	%	========================================================== %	1
+		\part{리눅스 }
+		\frame{\partpage}
+
+\label{part3} 	%  리눅스
+
+
+	%	---------------------------------------------------------- 2 목차
+		\begin{frame} [plain]{목차}
+		\tableofcontents%
+		\end{frame}
+		
+
+
+
+	%	---------------------------------------------------------- 리눅스
+	%		Frame
+	%	----------------------------------------------------------
+		\section{리눅스}
+
+
+	%	---------------------------------------------------------- 3
+		\begin{frame} [t,plain]
+%		\frametitle{리눅스}
+
+			\begin{block} {리눅스}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}						
+
+
+	%	---------------------------------------------------------- 4	현재 디렉토리 살펴보기
+		\begin{frame} [t,plain]
+%		\frametitle{현재 디렉토리 살펴보기}
+
+
+
+			\begin{block} {현재 디렉토리 살펴보기}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}			
+
+	%	---------------------------------------------------------- 5	디렉토리 이동하기
+		\begin{frame} [t,plain]
+%		\frametitle{디렉토리 이동하기}
+
+			\begin{block} {디렉토리 이동하기}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}			
+
+
+
+	%	---------------------------------------------------------- 6	디렉토리 만들기 삭제하기
+		\begin{frame} [t,plain]
+%		\frametitle{디렉토리 만들기 삭제하기}
+
+			\begin{block} {디렉토리 만들기}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+
+
+			\begin{block} {디렉토리 삭제하기}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}			
+
+
+
+%파일 시스템 탐색을 위한 리눅스 명령어
+	%	---------------------------------------------------------- 7	파일 시스템 탐색을 위한 리눅스 명령어
+		\begin{frame} [t,plain]
+%		\frametitle{파일 시스템 탐색을 위한 리눅스 명령어}
+
+			\begin{block} {파일 시스템 탐색을 위한 리눅스 명령어}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}			
+
+%시스템 조작을 위한 리눅스 명령어
+	%	---------------------------------------------------------- 8	시스템 조작을 위한 리눅스 명령어
+		\begin{frame} [t,plain]
+%		\frametitle{시스템 조작을 위한 리눅스 명령어}
+
+			\begin{block} {시스템 조작을 위한 리눅스 명령어}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}			
+
+%파일 관리를 위한 리눅스 명령어
+	%	---------------------------------------------------------- 9	파일 관리를 위한 리눅스 명령어
+		\begin{frame} [t,plain]
+%		\frametitle{파일 관리를 위한 리눅스 명령어}
+
+			\begin{block} {파일 관리를 위한 리눅스 명령어}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}			
+
+%지루할 때 탐색할 수 있는 재미있는 리눅스 명령어
+	%	---------------------------------------------------------- 10	지루할 때 탐색할 수 있는 재미있는 리눅스 명령어
+		\begin{frame} [t,plain]
+%		\frametitle{지루할 때 탐색할 수 있는 재미있는 리눅스 명령어}
+
+			\begin{block} {지루할 때 탐색할 수 있는 재미있는 리눅스 명령어}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}			
+
+%네트워크 관리자에게 가장 많이 사용되는 리눅스 명령어
+	%	---------------------------------------------------------- 11	네트워크 관리자에게 가장 많이 사용되는 리눅스 명령어
+		\begin{frame} [t,plain]
+%		\frametitle{네트워크 관리자에게 가장 많이 사용되는 리눅스 명령어}
+
+			\begin{block} {네트워크 관리자에게 가장 많이 사용되는 리눅스 명령어}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}			
+
+%리눅스 명령어 검색 및 정규 표현식
+	%	---------------------------------------------------------- 12	리눅스 명령어 검색 및 정규 표현식
+		\begin{frame} [t,plain]
+%		\frametitle{리눅스 명령어 검색 및 정규 표현식}
+
+			\begin{block} {리눅스 명령어 검색 및 정규 표현식}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}			
+
+%IO 및 소유권을 다루는 리눅스 명령어
+	%	---------------------------------------------------------- 13	IO 및 소유권을 다루는 리눅스 명령어
+		\begin{frame} [t,plain]
+%		\frametitle{IO 및 소유권을 다루는 리눅스 명령어}
+
+			\begin{block} {IO 및 소유권을 다루는 리눅스 명령어}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}			
+
+%일상적인 사용을 위한 기타 명령어
+	%	---------------------------------------------------------- 14	일상적인 사용을 위한 기타 명령어
+		\begin{frame} [t,plain]
+%		\frametitle{일상적인 사용을 위한 기타 명령어}
+
+			\begin{block} {일상적인 사용을 위한 기타 명령어}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}			
+
+
+	%	---------------------------------------------------------- 15
+		\begin{frame} [t,plain]
+		\end{frame}			
+
+
+	%	---------------------------------------------------------- 16
+		\begin{frame} [t,plain]
+		\end{frame}			
+
+
+	%	========================================================== 1	VIM에서 텍스트 문서 만들기
+		\part{VIM에서 텍스트 문서 만들기}
+		\frame{\partpage}
+
+\label{part1} 	%  VIM에서 텍스트 문서 만들기
+
+
+	%	---------------------------------------------------------- 2 목차
+		\begin{frame} [plain]{목차}
+		\tableofcontents%
+		\end{frame}
+		
+	%	---------------------------------------------------------- 3
+		\begin{frame} [t,plain]
+
+			\begin{block} {일상적인 사용을 위한 기타 명령어}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}			
+
+	%	---------------------------------------------------------- 4
+		\begin{frame} [t,plain]
+
+			\begin{block} {VIM ex 모드 명령}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}			
+
+
+
+	%	---------------------------------------------------------- 5
+		\begin{frame} [t,plain]
+
+			\begin{block} {텍스트 문서 내용 확인하기}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+
+
+		\end{frame}			
+
+
+	%	---------------------------------------------------------- 6
+		\begin{frame} [t,plain]
+
+			\begin{block} {}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+
+
+		\end{frame}			
+
+	%	---------------------------------------------------------- 7
+		\begin{frame} [t,plain]
+
+			\begin{block} {}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+
+
+		\end{frame}			
+
+	%	---------------------------------------------------------- 8
+		\begin{frame} [t,plain]
+
+			\begin{block} {깃에서 기본 편집기 변경하기}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item git config --global core.editor "notepad++"
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}			
+
+
+
+
+	%	========================================================== 깃 기본용어
+	%												%
+	%												%
+	%												%
+	%	========================================================== 1
+
+		\part{깃 기본 용어}
+		\frame{\partpage}
+
+\label{part1} 	%  깃 기본 용어
+
+
+	%	---------------------------------------------------------- 2 목차
+		\begin{frame} [plain]{목차}
+		\tableofcontents%
+		\end{frame}
+
+
+
+	%	---------------------------------------------------------- 깃 자주 사용하는 Git 명령어
+	%		Frame
+	%	----------------------------------------------------------
+		\section{깃 자주 사용하는 Git 명령어}
+
+	%	---------------------------------------------------------- page		3
+		\begin{frame} [t,plain]
+		\frametitle{깃 자주 사용하는 Git 명령어}
+
+			\begin{block} {깃 자주 사용하는 Git 명령어}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 커밋 	\hrulefill commit
+				\item 풀	 	\hrulefill pull
+				\item 푸시 	\hrulefill push
+				\item 패치 	\hrulefill Patch
+				\item 브랜치	\hrulefill Bramch
+				\item 병합		\hrulefill Merge
+				\item 스태시	\hrulefill Stach
+				\item 패기		\hrulefill 
+				\item 태그		\hrulefill Tag
+				\item 콜론		\hrulefill Clone
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}			
+
+
+	%	---------------------------------------------------------- page		4
+		\begin{frame} [t,plain]
+			\begin{block} {커밋 	\hrulefill commit}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 스테이지에 올린 파일들을 한 묶음으로 스냅샷을 찍음
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}			
+
+	%	---------------------------------------------------------- page		5
+		\begin{frame} [t,plain]
+			\begin{block} {풀	 	\hrulefill pull}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 원격저장소 Remote Repository에 있는 모든 커밋을 다운로드 받음 
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}			
+
+	%	---------------------------------------------------------- page		6
+		\begin{frame} [t,plain]
+			\begin{block} {푸시 	\hrulefill push}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 로컬저장소 에 있는 커밋을 원격저장소에 업로드 함
+				\item Local Repository
+				\item Remote Repository
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}			
+
+	%	---------------------------------------------------------- page		7
+		\begin{frame} [t,plain]
+			\begin{block} {패치 	\hrulefill Patch}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 새로 고침
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}			
+
+	%	---------------------------------------------------------- page		8
+		\begin{frame} [t,plain]
+			\begin{block} {브랜치	\hrulefill Bramch}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 새로운 브랜치를 생성하거나 삭제함 
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}			
+
+	%	---------------------------------------------------------- page		9
+		\begin{frame} [t,plain]
+			\begin{block} {병합		\hrulefill Merge}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 두개의 브랜치를 하나로 합침 
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}			
+
+	%	---------------------------------------------------------- page		10
+		\begin{frame} [t,plain]
+			\begin{block} {스태시	\hrulefill Stach}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 작업하던 도중 브랜치를 바꾸거나 할때 Tracked 상태인 파일을 임시 저장함 
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}			
+
+	%	---------------------------------------------------------- page		11
+		\begin{frame} [t,plain]
+			\begin{block} {태그 	\hrulefill Tag}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize} 
+				\item 보통 배포할때 버전을 태그로 스냅샷을 남김 
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}			
+
+	%	---------------------------------------------------------- page		12
+		\begin{frame} [t,plain]
+			\begin{block} {패기}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}			
+
+	%	---------------------------------------------------------- page		13
+		\begin{frame} [t,plain]
+			\begin{block} {태그		\hrulefill Tag}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}			
+
+	%	---------------------------------------------------------- page		14
+		\begin{frame} [t,plain]
+			\begin{block} {콜론		\hrulefill Clone}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 원격저장소 에서 로컬저장소로 내려 받기 
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}			
+
+	%	---------------------------------------------------------- page		15
+		\begin{frame} [t,plain]
+			\begin{block} {init }
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}			
+
+	%	---------------------------------------------------------- page		16
+		\begin{frame} [t,plain]
+			\begin{block} {add}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}			
+
+	%	---------------------------------------------------------- page		17
+		\begin{frame} [t,plain]
+			\begin{block} {log}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}		
+
+	%	---------------------------------------------------------- page		18
+		\begin{frame} [t,plain]
+			\begin{block} {checkout}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}			
+	
+	%	---------------------------------------------------------- page		19
+		\begin{frame} [t,plain]
+			\begin{block} {}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}			
+
+	%	---------------------------------------------------------- page		20
+		\begin{frame} [t,plain]
+			\begin{block} {}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}			
+
+
+	%	========================================================== 깃 브랜치
+	%												%
+	%												%
+	%												%
+	%	========================================================== page		1
+
+		\part{깃 브랜치 }
+		\frame{\partpage}
+
+
+\label{part1} 	%  깃 브랜치
+
+
+	%	---------------------------------------------------------- page		2 목차
+		\begin{frame} [plain]{목차}
+		\tableofcontents%
+		\end{frame}
+
+	%	---------------------------------------------------------- 깃 저장소 만들기
+	%		Frame
+	%	----------------------------------------------------------
+		\section{브랜치}
+	%	---------------------------------------------------------- page		3
+		\begin{frame} [t,plain]
+			\begin{block} {브랜치}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+		\section{Master 브랜치}
+	%	---------------------------------------------------------- page		4
+		\begin{frame} [t,plain]
+			\begin{block} {Master 브랜치}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+		\section{브랜치 만들기}
+	%	---------------------------------------------------------- page		5
+		\begin{frame} [t,plain]
+			\begin{block} {브랜치 만들기}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+
+		
+		\section{브랜치 만들기 : 종류 }
+	%	---------------------------------------------------------- page		6
+		\begin{frame} [t,plain]
+			\begin{block} {브랜치 만들기 : 종류 }
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+		\section{통합 브랜치 Integration } 
+	%	---------------------------------------------------------- page		7
+		\begin{frame} [t,plain]
+			\begin{block} {통합 브랜치 Integration } 
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+		\section{토픽 브랜치 Topic }
+	%	---------------------------------------------------------- page		8
+		\begin{frame} [t,plain]
+			\begin{block} {토픽 브랜치 Topic }
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+		\section{브랜치 전환하기}
+	%	---------------------------------------------------------- page		9
+		\begin{frame} [t,plain]
+			\begin{block} {브랜치 전환하기}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+		\section{브랜치 통합하기}
+	%	---------------------------------------------------------- page		10
+		\begin{frame} [t,plain]
+			\begin{block} {브랜치 통합하기}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+		\section{토픽브랜치 와 통합브랜치에서의 작업흐름 파악하기}
+	%	---------------------------------------------------------- page		11
+		\begin{frame} [t,plain]
+			\begin{block} {토픽브랜치 와 통합브랜치에서의 작업흐름 파악하기}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+				\item 
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+	%	---------------------------------------------------------- page		12
+		\begin{frame} [t,plain]
+		\end{frame}						
+
+	%	========================================================== 깃으로 버전 관리하기
+	%												%
+	%												%
+	%												%
+	%	========================================================== page		1
+
+		\part{깃으로 버전 관리하기 \\중앙도서관 39 page }
+		\frame{\partpage}
+
+
+\label{part1} 	%  깃으로 버전 관리하기
+
+
+	%	---------------------------------------------------------- page		2 목차
+		\begin{frame} [plain]{목차}
+		\tableofcontents%
+
+중앙도서관 39 page 
+
+		\end{frame}
+		
+
+			
+
+	%	---------------------------------------------------------- 깃 저장소 만들기
+	%		Frame
+	%	----------------------------------------------------------
+		\section{깃 저장소 만들기}
+
+	%	---------------------------------------------------------- page		3
+		\begin{frame} [t,plain]
+		\frametitle{깃 저장소 만들기}
+
+			\begin{block} {깃 저장소 만들기}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 저장소를 만들고 싶은 디렉토리로 이동해서 깃을 초기화하면
+그때 부터 해당 디렉터리에 있는 파일들을 버전관리 할수 있습니다
+
+			\end{itemize}
+			\end{block}						
+
+			\begin{block} {해당 디렉토리로 이동}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 탐색기에서 해당 디렉토리로 이동
+				\item  Git Bash Here
+			\end{itemize}
+			\end{block}						
+
+
+			\begin{block} {깃 초기화 하기 - git init}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item git init
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}						
+
+
+	%	---------------------------------------------------------- 버전 만들기
+	%		Frame
+	%	----------------------------------------------------------
+		\section{버전 만들기}
+
+	%	---------------------------------------------------------- page		4 
+		\begin{frame} [t,plain]
+		\frametitle{버전 만들기}
+
+			\begin{block} {깃에서 버전이란}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}	
+
+
+			\begin{block} {깃에서 버전이란}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 작업트리
+				\item 스테이지
+				\item 저장소
+			\end{itemize}
+			\end{block}	
+
+				
+		\end{frame}						
+
+
+	%	---------------------------------------------------------- page		5 
+		\begin{frame} [t,plain]
+%		\frametitle{버전 만들기}
+
+			\begin{block} {버전 만들기}
+문서를 수정 저장하면 그 파일은 작업트리에 있게된다.
+그리고 수정한 파일은 버전으로 만들고 싶을때 스테이지에 넣습니다.
+다른 파일도 수정한 뒤 버전으로 만들겠다면 스테이지에 넣어 둡니다.
+파일 수정을 끝내고 스테이지에 다 넣었다면 버전을 만들기 위해 깃에서 커밋명령을 내립니다.
+커밋 명령을 내리면 새로운 버전이 생성되면서 스테이지에 대기하던 파일이 모두 저장소에 저장 됩니다.
+			\end{block}	
+
+
+
+					
+		\end{frame}						
+
+	%	---------------------------------------------------------- 커밋 내용 확인하기
+	%		Frame
+	%	----------------------------------------------------------
+		\section{커밋 내용 확인하기}
+
+
+	%	---------------------------------------------------------- page		6
+		\begin{frame} [t,plain]
+		\frametitle{커밋 내용 확인하기}
+			\begin{block} {커밋 내용 확인하기 }
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+	%	---------------------------------------------------------- 버전 만드는 단계마다 파일 상태 알아보기
+	%		Frame
+	%	----------------------------------------------------------
+		\section{버전 만드는 단계마다 파일 상태 알아보기}
+
+	%	---------------------------------------------------------- page		7
+		\begin{frame} [t,plain]
+		\frametitle{버전 만드는 단계마다 파일 상태 알아보기}
+			\begin{block} {버전 만드는 단계마다 파일 상태 알아보기}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+	%	---------------------------------------------------------- 작업 되돌리기
+	%		Frame
+	%	----------------------------------------------------------
+		\section{작업 되돌이기}
+
+	%	---------------------------------------------------------- page		8
+		\begin{frame} [t,plain]
+		\frametitle{작업 되돌이기}
+			\begin{block} {작업 되돌이기}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+
+
+
+	%	============================================================================== 기타
+		\part{깃과 브렌치 \\ 중앙도서관 p85 }
+		\frame{\partpage}
+		
+\label{part3} 	%  키타 현황
+
+		\begin{frame} [plain]{목차}
+		\tableofcontents%
+		\end{frame}
+
+	%	---------------------------------------------------------- 브랜치란
+	%		Frame
+	%	----------------------------------------------------------
+		\section{ 브랜치란}
+
+		\begin{frame} [t,plain]
+		\frametitle{브랜치란 }
+			\begin{block} {브랜치란 }
+			\setlength{\leftmargini}{1em}			
+			\begin{itemize}
+				\item 	
+				\item 	
+				\item 	
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+
+
+
+	%	---------------------------------------------------------- 브랜치 만들기
+	%		Frame
+	%	----------------------------------------------------------
+		\section{ 브랜치 만들기}
+
+		\begin{frame} [t,plain]
+		\frametitle{브랜치 만들기 }
+			\begin{block} {브랜치 만들기 }
+			\setlength{\leftmargini}{1em}			
+			\begin{itemize}
+				\item 	
+				\item 	
+				\item 	
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+	%	---------------------------------------------------------- 브렌치 정보 확인하기
+	%		Frame
+	%	----------------------------------------------------------
+		\section{ 브렌치 정보 확인하기}
+
+		\begin{frame} [t,plain]
+		\frametitle{브렌치 정보 확인하기 }
+			\begin{block} {브렌치 정보 확인하기 }
+			\setlength{\leftmargini}{1em}			
+			\begin{itemize}
+				\item 	
+				\item 	
+				\item 	
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+	%	---------------------------------------------------------- 브랜치 병합하기
+
+	%		Frame
+	%	----------------------------------------------------------
+		\section{ 브랜치 병합하기}
+
+		\begin{frame} [t,plain]
+		\frametitle{브랜치 병합하기 }
+			\begin{block} {브랜치 병합하기 }
+			\setlength{\leftmargini}{1em}			
+			\begin{itemize}
+				\item 	
+				\item 	
+				\item 	
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+	%	---------------------------------------------------------- 브랜치 관리하기
+	%		Frame
+	%	----------------------------------------------------------
+		\section{ 브랜치 관리하기}
+
+		\begin{frame} [t,plain]
+		\frametitle{브랜치 관리하기 }
+			\begin{block} { 브랜치 관리하기}
+			\setlength{\leftmargini}{1em}			
+			\begin{itemize}
+				\item 	
+				\item 	
+				\item 	
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+	%	----------------------------------------------------------
+		\begin{frame} [t,plain]
+		\end{frame}						
+
+	%	========================================================== 깃허브로 백업하기
+	%
+	%
+	%
+	%	---------------------------------------------------------- 	page 	1
+		\part{깃허브로 백업하기 \\ 중앙도서관 P 132}
+		\frame{\partpage}
+
+\label{part1} 	%  차 시간 정리
+
+
+	%	---------------------------------------------------------- 	page 	2
+		\begin{frame} [plain]{목차}
+		\tableofcontents%
+		\end{frame}
+
+	%	---------------------------------------------------------- 	page 	3
+		\begin{frame} [t,plain]
+			\begin{block} {원격저장소와 깃허브}
+			\setlength{\leftmargini}{1em}			
+			\begin{itemize}
+				\item 	
+				\item 	
+				\item 	
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+	%	---------------------------------------------------------- 	page 	4
+		\begin{frame} [t,plain]
+			\begin{block} {깃허브 시작하기}
+			\setlength{\leftmargini}{1em}			
+			\begin{itemize}
+				\item 	
+				\item 	
+				\item 	
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+	%	---------------------------------------------------------- 	page 	5
+		\begin{frame} [t,plain]
+			\begin{block} {지역저장소를 원격저장소에 연결하기}
+			\setlength{\leftmargini}{1em}			
+			\begin{itemize}
+				\item 	
+				\item 	
+				\item 	
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+	%	---------------------------------------------------------- 	page 	6
+		\begin{frame} [t,plain]
+			\begin{block} {원격저장소에 올리기 및 내려받기}
+			\setlength{\leftmargini}{1em}			
+			\begin{itemize}
+				\item 	
+				\item 	
+				\item 	
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+	%	---------------------------------------------------------- 	page 	7
+		\begin{frame} [t,plain]
+			\begin{block} {깃허브에 SSH원격 접속하기 }
+			\setlength{\leftmargini}{1em}			
+			\begin{itemize}
+				\item 	
+				\item 	
+				\item 	
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+
+	%	---------------------------------------------------------- 	page 	8
+		\begin{frame} [t,plain]
+		\end{frame}						
+
+
+	%	========================================================== 깃허브로 협업하기
+	%
+	%
+	%	---------------------------------------------------------- 	page 	1
+		\part{깃허브로 협업하기 \\중앙도서관 167 page }
+		\frame{\partpage}
+
+\label{part1} 	%  깃허브로 협업하기
+
+	%	---------------------------------------------------------- 	page 	2
+		\begin{frame} [plain]{목차}
+		\tableofcontents%
+		\end{frame}
+
+
+	%	---------------------------------------------------------- 	page 	3
+		\begin{frame} [t,plain]
+			\begin{block} {여러 컴퓨터에서 원격 저장소 함께 사용하기}
+			\setlength{\leftmargini}{1em}			
+			\begin{itemize}
+				\item 	
+				\item 	
+				\item 	
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+	%	---------------------------------------------------------- 	page 	4
+		\begin{frame} [t,plain]
+			\begin{block} {원격 브랜치 정보 가져오기}
+			\setlength{\leftmargini}{1em}			
+			\begin{itemize}
+				\item 	
+				\item 	
+				\item 	
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+	%	---------------------------------------------------------- 	page 	5
+		\begin{frame} [t,plain]
+			\begin{block} {협업의 기본 알아보기}
+			\setlength{\leftmargini}{1em}			
+			\begin{itemize}
+				\item 	
+				\item 	
+				\item 	
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+	%	---------------------------------------------------------- 	page 	6
+		\begin{frame} [t,plain]
+			\begin{block} {협업에서 브랜치 사용하기}
+			\setlength{\leftmargini}{1em}			
+			\begin{itemize}
+				\item 	
+				\item 	
+				\item 	
+			\end{itemize}
+			\end{block}						
+		\end{frame}						
+
+
+	%	---------------------------------------------------------- 	page 	7
+		\begin{frame} [t,plain]
+		\end{frame}						
+
+	%	---------------------------------------------------------- 	page 	8
+		\begin{frame} [t,plain]
+		\end{frame}						
+
+
+
+	%	========================================================== 기본용어
+		\part{기본 용어}
+		\frame{\partpage}
+
+\label{part1} 	%  기본 용어
+
+		\begin{frame} [plain]{목차}
+		\tableofcontents%
+		\end{frame}
+
+	%	---------------------------------------------------------- 3
+		\begin{frame} [t,plain]
+
+			\begin{block} { 커멘드 라인 }
+			\setlength{\leftmargini}{1em}			
+			\begin{itemize}
+				\item 	
+				\item 	
+				\item 	
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}						
+
+	%	---------------------------------------------------------- 4
+		\begin{frame} [t,plain]
+
+			\begin{block} { 저장소 re po si to ry }
+			\setlength{\leftmargini}{1em}			
+			\begin{itemize}
+				\item 	
+				\item 	
+				\item 	
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}						
+
+	%	---------------------------------------------------------- 5 버전관리
+		\begin{frame} [t,plain]
+
+			\begin{block} { 버전 관리 }
+			\setlength{\leftmargini}{1em}			
+			\begin{itemize}
+				\item 	
+				\item 	
+				\item 	
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}						
+
+	%	---------------------------------------------------------- 6 	커밋 com mit
+		\begin{frame} [t,plain]
+
+			\begin{block} { 커밋 com mit }
+			\setlength{\leftmargini}{1em}			
+			\begin{itemize}
+				\item 	
+				\item 	
+				\item 	
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}						
+
+
+
+	%	---------------------------------------------------------- 7 	브랜치 bran ch
+		\begin{frame} [t,plain]
+
+			\begin{block} {브랜치 bran ch }
+			\setlength{\leftmargini}{1em}			
+			\begin{itemize}
+				\item 	
+				\item 	
+				\item 	
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}						
+
+	%	---------------------------------------------------------- 8
+		\begin{frame} [t,plain]
+
+			\begin{block} { 저장소 re po si to ry }
+			\setlength{\leftmargini}{1em}			
+			\begin{itemize}
+				\item 	
+				\item 	
+				\item 	
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}						
+
+
+	%	========================================================== 주요 명령어
+		\part{주요 명령어}
+		\frame{\partpage}
+
+\label{part1} 	%  주요 명령어
+
+		\begin{frame} [plain]{목차}
+		\tableofcontents%
+		\end{frame}
+
+	%	----------------------------------------------------------
+		\begin{frame} [t,plain]
+		\end{frame}						
+
+	%	----------------------------------------------------------
+		\begin{frame} [t,plain]
+		\end{frame}						
+
+
+	%	 ---------------------------------------------------------- 					1	init			
+		\begin{frame} [t,plain]									
+											
+			\begin{block} {		init		}				
+			\setlength{\leftmargini}{1em}								
+			\begin{itemize}								
+				\item							
+				\item							
+				\item							
+			\end{itemize}								
+			\end{block}								
+											
+		\end{frame}									
+
+	%	 ---------------------------------------------------------- 					2	con fig			
+		\begin{frame} [t,plain]									
+											
+			\begin{block} {		con fig		}				
+			\setlength{\leftmargini}{1em}								
+			\begin{itemize}								
+				\item							
+				\item							
+				\item							
+			\end{itemize}								
+			\end{block}								
+											
+		\end{frame}									
+
+	%	 ---------------------------------------------------------- 					3	help			
+		\begin{frame} [t,plain]									
+											
+			\begin{block} {		help		}				
+			\setlength{\leftmargini}{1em}								
+			\begin{itemize}								
+				\item							
+				\item							
+				\item							
+			\end{itemize}								
+			\end{block}								
+											
+		\end{frame}									
+
+	%	 ---------------------------------------------------------- 					4	sta rtus			
+		\begin{frame} [t,plain]									
+											
+			\begin{block} {		sta rtus		}				
+			\setlength{\leftmargini}{1em}								
+			\begin{itemize}								
+				\item							
+				\item							
+				\item							
+			\end{itemize}								
+			\end{block}								
+											
+		\end{frame}									
+
+	%	 ---------------------------------------------------------- 					5	add			
+		\begin{frame} [t,plain]									
+											
+			\begin{block} {		add		}				
+			\setlength{\leftmargini}{1em}								
+			\begin{itemize}								
+				\item							
+				\item							
+				\item							
+			\end{itemize}								
+			\end{block}								
+											
+		\end{frame}									
+
+
+	%	 ---------------------------------------------------------- 					6	commit			
+		\begin{frame} [t,plain]									
+											
+			\begin{block} {		commit		}				
+			\setlength{\leftmargini}{1em}								
+			\begin{itemize}								
+				\item							
+				\item							
+				\item							
+			\end{itemize}								
+			\end{block}								
+											
+		\end{frame}									
+
+	%	 ---------------------------------------------------------- 					7	branch			
+		\begin{frame} [t,plain]									
+											
+			\begin{block} {		branch		}				
+			\setlength{\leftmargini}{1em}								
+			\begin{itemize}								
+				\item							
+				\item							
+				\item							
+			\end{itemize}								
+			\end{block}								
+											
+		\end{frame}									
+
+	%	 ---------------------------------------------------------- 					8	check out			
+		\begin{frame} [t,plain]									
+											
+			\begin{block} {		check out		}				
+			\setlength{\leftmargini}{1em}								
+			\begin{itemize}								
+				\item							
+				\item							
+				\item							
+			\end{itemize}								
+			\end{block}								
+											
+		\end{frame}									
+
+	%	 ---------------------------------------------------------- 					9	mer ge			
+		\begin{frame} [t,plain]									
+											
+			\begin{block} {		mer ge		}				
+			\setlength{\leftmargini}{1em}								
+			\begin{itemize}								
+				\item							
+				\item							
+				\item							
+			\end{itemize}								
+			\end{block}								
+											
+		\end{frame}									
+
+	%	 ---------------------------------------------------------- 					10	push			
+		\begin{frame} [t,plain]									
+											
+			\begin{block} {		push		}				
+			\setlength{\leftmargini}{1em}								
+			\begin{itemize}								
+				\item							
+				\item							
+				\item							
+			\end{itemize}								
+			\end{block}								
+											
+		\end{frame}									
+
+
+	%	 ---------------------------------------------------------- 					11	pull			
+		\begin{frame} [t,plain]									
+											
+			\begin{block} {		pull		}				
+			\setlength{\leftmargini}{1em}								
+			\begin{itemize}								
+				\item							
+				\item							
+				\item							
+			\end{itemize}								
+			\end{block}								
+											
+		\end{frame}									
+
+
+	%	 ---------------------------------------------------------- 					12	빈페이지
+		\begin{frame} [t,plain]
+		\end{frame}						
+
+
+% ------------------------------------------------------------------------------
+% End document
+% ------------------------------------------------------------------------------
+
+
+
+
+
+\end{document}
+
+
