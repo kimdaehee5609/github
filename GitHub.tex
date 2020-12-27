@@ -1,0 +1,2599 @@
+%	-------------------------------------------------------------------------------
+% 
+%			2020년 
+%			12월 
+%			26일 
+%			토요일
+%			첫작업
+%
+%
+%
+%
+%
+%
+%
+%	-------------------------------------------------------------------------------
+
+%	\documentclass[12pt, a3paper, oneside]{book}
+	\documentclass[12pt, a4paper, oneside]{book}
+%	\documentclass[12pt, a4paper, landscape, oneside]{book}
+
+		% --------------------------------- 페이지 스타일 지정
+		\usepackage{geometry}
+%		\geometry{landscape=true	}
+		\geometry{top 			=10em}
+		\geometry{bottom			=10em}
+		\geometry{left			=8em}
+		\geometry{right			=8em}
+		\geometry{headheight		=4em} % 머리말 설치 높이
+		\geometry{headsep		=2em} % 머리말의 본문과의 띠우기 크기
+		\geometry{footskip		=4em} % 꼬리말의 본문과의 띠우기 크기
+% 		\geometry{showframe}
+	
+%		paperwidth 	= left + width + right (1)
+%		paperheight 	= top + height + bottom (2)
+%		width 		= textwidth (+ marginparsep + marginparwidth) (3)
+%		height 		= textheight (+ headheight + headsep + footskip) (4)	
+
+
+
+		%	=================================================================== package
+		%	package
+		%	===================================================================
+%			\usepackage[hangul]{kotex}				% 한글 사용
+			\usepackage{kotex}					% 한글 사용
+			\usepackage[unicode]{hyperref}			% 한글 하이퍼링크 사용
+
+		% ------------------------------ 수학 수식
+			\usepackage{amssymb,amsfonts,amsmath}	% 수학 수식 사용
+			\usepackage{mathtools}				% amsmath 확장판
+
+			\usepackage{scrextend}				% 
+		
+
+		% ------------------------------ LIST
+			\usepackage{enumerate}			%
+			\usepackage{enumitem}			%
+			\usepackage{tablists}				%	수학문제의 보기 등을 표현하는데 사용
+										%	tabenum
+
+
+		% ------------------------------ table 
+			\usepackage{longtable}			%
+			\usepackage{tabularx}			%
+			\usepackage{tabu}				%
+
+
+
+
+		% ------------------------------ 
+			\usepackage{setspace}			%
+			\usepackage{booktabs}		% table
+			\usepackage{color}			%
+			\usepackage{multirow}			%
+			\usepackage{boxedminipage}	% 미니 페이지
+			\usepackage[pdftex]{graphicx}	% 그림 사용
+			\usepackage[final]{pdfpages}		% pdf 사용
+			\usepackage{framed}			% pdf 사용
+
+			
+			\usepackage{fix-cm}	
+			\usepackage[english]{babel}
+	
+		%	======================================================================================= package
+		% 	tikz package
+		% 	
+		% 	--------------------------------- 	
+			\usepackage{tikz}%
+			\usetikzlibrary{arrows,positioning,shapes}
+			\usetikzlibrary{mindmap}			
+			
+
+		% --------------------------------- 	page
+			\usepackage{afterpage}		% 다음페이지가 나온면 어떻게 하라는 명령 정의 패키지
+%			\usepackage{fullpage}			% 잘못 사용하면 다 흐트러짐 주의해서 사용
+%			\usepackage{pdflscape}		% 
+			\usepackage{lscape}			%	 
+
+
+			\usepackage{blindtext}
+	
+		% --------------------------------- font 사용
+			\usepackage{pifont}				%
+			\usepackage{textcomp}
+			\usepackage{gensymb}
+			\usepackage{marvosym}
+
+
+
+		% Package --------------------------------- 
+
+			\usepackage{tablists}				%
+
+
+		% Package --------------------------------- 
+			\usepackage[framemethod=TikZ]{mdframed}				% md framed package
+			\usepackage{smartdiagram}								% smart diagram package
+
+			\newcounter{theo}[section]\setcounter{theo}{0}
+			\renewcommand{\thetheo}{\arabic{section}.\arabic{theo}}
+%			\newenvironment{name}[args]{begin_def}{end_def}
+
+ 
+  
+
+
+		% Package ---------------------------------    연습문제 
+
+			\usepackage{exsheets}				%
+
+			\SetupExSheets{solution/print=true}
+			\SetupExSheets{question/type=exam}
+			\SetupExSheets[points]{name=point,name-plural=points}
+
+
+		% --------------------------------- 페이지 스타일 지정
+
+		\usepackage[Sonny]		{fncychap}
+
+			\makeatletter
+			\ChNameVar	{\Large\bf}
+			\ChNumVar	{\Huge\bf}
+			\ChTitleVar		{\Large\bf}
+			\ChRuleWidth	{0.5pt}
+			\makeatother
+
+%		\usepackage[Lenny]		{fncychap}
+%		\usepackage[Glenn]		{fncychap}
+%		\usepackage[Conny]		{fncychap}
+%		\usepackage[Rejne]		{fncychap}
+%		\usepackage[Bjarne]	{fncychap}
+%		\usepackage[Bjornstrup]{fncychap}
+
+		\usepackage{fancyhdr}
+		\pagestyle{fancy}
+		\fancyhead{} % clear all fields
+		\fancyhead[LO]{\footnotesize \leftmark}
+		\fancyhead[RE]{\footnotesize \leftmark}
+		\fancyfoot{} % clear all fields
+		\fancyfoot[LE,RO]{\large \thepage}
+		%\fancyfoot[CO,CE]{\empty}
+		\renewcommand{\headrulewidth}{1.0pt}
+		\renewcommand{\footrulewidth}{0.4pt}
+	
+	
+	
+		%	--------------------------------------------------------------------------------------- 
+		% 	tritlesec package
+		% 	
+		% 	
+		% 	------------------------------------------------------------------ section 스타일 지정
+	
+			\usepackage{titlesec}
+		
+		% 	----------------------------------------------------------------- section 글자 모양 설정
+			\titleformat*{\section}					{\large\bfseries}
+			\titleformat*{\subsection}				{\normalsize\bfseries}
+			\titleformat*{\subsubsection}			{\normalsize\bfseries}
+			\titleformat*{\paragraph}				{\normalsize\bfseries}
+			\titleformat*{\subparagraph}				{\normalsize\bfseries}
+	
+		% 	----------------------------------------------------------------- section 번호 설정
+			\renewcommand{\thepart}				{\arabic{part}.}
+			\renewcommand{\thesection}				{\arabic{section}.}
+			\renewcommand{\thesubsection}			{\thesection\arabic{subsection}.}
+			\renewcommand{\thesubsubsection}		{\thesubsection\arabic{subsubsection}}
+			\renewcommand\theparagraph 			{$\blacksquare$ \hspace{3pt}}
+
+		% 	----------------------------------------------------------------- section 페이지 나누기 설정
+			\let\stdsection\section
+			\renewcommand\section{\newpage\stdsection}
+
+
+
+		%	--------------------------------------------------------------------------------------- 
+		% 	\titlespacing*{commandi} {left} {before-sep} {after-sep} [right-sep]		
+		% 	left
+		%	before-sep		:  수직 전 간격
+		% 	after-sep	 	:  수직으로 후 간격
+		%	right-sep
+
+			\titlespacing*{\section} 			{0pt}{1.0em}{1.0em}
+			\titlespacing*{\subsection}	  		{0ex}{1.0em}{1.0em}
+			\titlespacing*{\subsubsection}		{0ex}{1.0em}{1.0em}
+			\titlespacing*{\paragraph}			{0em}{1.5em}{1.0em}
+			\titlespacing*{\subparagraph}		{4em}{1.0em}{1.0em}
+	
+		%	\titlespacing*{\section} 			{0pt}{0.0\baselineskip}{0.0\baselineskip}
+		%	\titlespacing*{\subsection}	  		{0ex}{0.0\baselineskip}{0.0\baselineskip}
+		%	\titlespacing*{\subsubsection}		{6ex}{0.0\baselineskip}{0.0\baselineskip}
+		%	\titlespacing*{\paragraph}			{6pt}{0.0\baselineskip}{0.0\baselineskip}
+	
+
+		% --------------------------------- recommend		섹션별 페이지 상단 여백
+			\newcommand{\SectionMargin}				{\newpage  \null \vskip 2cm}
+			\newcommand{\SubSectionMargin}			{\newpage  \null \vskip 2cm}
+			\newcommand{\SubSubSectionMargin}		{\newpage  \null \vskip 2cm}
+
+
+		%	--------------------------------------------------------------------------------------- 
+		%
+		% 	toc 설정  - table of contents
+		% 	
+		% 	
+		% 	----------------------------------------------------------------  문서 기본 사항 설정
+			\setcounter{secnumdepth}{0} 		% 문단 번호 깊이 chapter
+			\setcounter{secnumdepth}{1} 		% 문단 번호 깊이 section
+			\setcounter{secnumdepth}{2} 		% 문단 번호 깊이 subsection
+			\setcounter{secnumdepth}{3} 		% 문단 번호 깊이 subsubsec
+			\setcounter{secnumdepth}{4} 		% 문단 번호 깊이 paragraph
+			\setcounter{secnumdepth}{5} 		% 문단 번호 깊이 subparagraph
+			\setcounter{tocdepth}{2} 			% 문단 번호 깊이 - 목차 출력시 출력 범위
+
+			\setlength{\parindent}{0cm} 		% 문서 들여 쓰기를 하지 않는다.
+
+
+		%	--------------------------------------------------------------------------------------- 
+		% 	mini toc 설정
+		% 	
+		% 	
+		% 	--------------------------------------------------------- 장의 목차  minitoc package
+			\usepackage{minitoc}
+
+%			\setcounter{minitocdepth}{0}    	% 	chapter 
+			\setcounter{minitocdepth}{1}    	%  	secton
+%			\setcounter{minitocdepth}{2}    	%  	subsection
+%			\setcounter{minitocdepth}{3}    	%  	sub sub section
+%			\setcounter{minitocdepth}{4}    	%  	paragraph
+%			\setcounter{minitocdepth}{5}    	%  	sub paragraph
+%			\setlength{\mtcindent}{12pt} 		%	default 24pt
+			\setlength{\mtcindent}{24pt} 		% 	default 24pt
+
+		% 	--------------------------------------------------------- part toc
+		%	\setcounter{parttocdepth}{2} 		%  default
+			\setcounter{parttocdepth}{0}
+		%	\setlength{\ptcindent}{0em}		%  default  목차 내용 들여 쓰기
+			\setlength{\ptcindent}{0em}         
+
+
+		% 	--------------------------------------------------------- section toc
+			\renewcommand{\ptcfont}{\normalsize\rm} 		%  default
+			\renewcommand{\ptcCfont}{\normalsize\bf} 	%  default
+			\renewcommand{\ptcSfont}{\normalsize\rm} 	%  default
+
+		% 	--------------------------------------------------------- section toc
+%			\setcounter{sectiondepth}{2}
+%			\setcounter{\secttocdepth}{2}				% default
+%			\setlength{\stcindent}{24pt}				% default
+%			\renewcommand{\stcfont}{f\small\rm}		% default
+%			\renewcommand{\stcSSfont}{f\small\bf} 	% default
+
+
+		%	=======================================================================================
+		% 	tocloft package
+		% 	
+		% 	------------------------------------------ 목차의 목차 번호와 목차 사이의 간격 조정
+			\usepackage{tocloft}
+
+		% 	------------------------------------------ 목차의 내어쓰기 즉 왼쪽 마진 설정
+			\setlength{\cftsecindent}{2em}			%  section
+
+		% 	------------------------------------------ 목차의 목차 번호와 목차 사이의 간격 조정
+			\setlength{\cftsecnumwidth}{2em}		%  section
+
+
+
+
+
+		%	=======================================================================================
+		% 	flowchart  package
+		% 	
+		% 	------------------------------------------ 목차의 목차 번호와 목차 사이의 간격 조정
+			\usepackage{flowchart}
+			\usetikzlibrary{arrows}
+
+		%	======================================================================================= 
+		% 	t color box
+		% 	
+		% 	------------------------------------------ 상자안에 강조 문자
+			\usepackage{tcolorbox}
+%			\usepackage[listings]{tcolorbox}
+			\tcbuselibrary{raster}
+			\tcbuselibrary{breakable}
+
+		%	=======================================================================================  코드 입력
+			\usepackage[]{quoting}
+			\usepackage{csquotes}		%
+			\usepackage{epigraph}		%
+			\usepackage{epigraph}		%
+
+			\usepackage{epigraph}		% 	 \begin{savequote}[45mm]
+										%		\qauthor{Shakespeare, Macbeth}
+										%		Cookies! Give me some cookies!
+										%		\qauthor{Cookie Monster}
+										%	\end{savequote}
+
+										%	\begin{quote}
+										%	\lipsum[1-2]
+										%	\end{quote}
+
+										%	\begin{quotation}
+										%	\lipsum[1-2]
+										%	\end{quotation}
+
+										%	\begin{quoting}
+										%	\lipsum[1-2]
+										%	\end{quoting}
+
+										%	\begin{verbatim}
+										%		core.ignorecase=true
+										%	\end{verbatim}
+
+
+
+		%	=======================================================================================
+		% 		makeindex package
+		% 	
+		% 	------------------------------------------ 목차의 목차 번호와 목차 사이의 간격 조정
+%			\usepackage{makeindex}
+%			\usepackage{makeidy}
+
+
+
+		%	=======================================================================================
+		% 		각주와 미주
+		% 	
+
+		\usepackage{endnotes} %미주 사용
+
+
+		%	=======================================================================================
+		% 	줄 간격 설정
+		% 	
+		% 	
+		% 	--------------------------------- 	줄간격 설정
+			\doublespace
+%			\onehalfspace
+%			\singlespace
+		
+		
+
+	% 	============================================================================== itemi Global setting
+
+	
+		%	-------------------------------------------------------------------------------
+		%		Vertical spacing
+		%	-------------------------------------------------------------------------------
+			\setlist[itemize]{topsep=0.0em}			% 상단의 여유치
+			\setlist[itemize]{partopsep=0.0em}			% 
+			\setlist[itemize]{parsep=0.0em}			% 
+%			\setlist[itemize]{itemsep=0.0em}			% 
+			\setlist[itemize]{noitemsep}				% 
+			
+		%	-------------------------------------------------------------------------------
+		%		Horizontal spacing
+		%	-------------------------------------------------------------------------------
+			\setlist[itemize]{labelwidth=1em}			%  라벨의 표시 폭
+			\setlist[itemize]{leftmargin=8em}			%  본문 까지의 왼쪽 여백  - 4em
+			\setlist[itemize]{labelsep=3em} 			%  본문에서 라벨까지의 거리 -  3em
+			\setlist[itemize]{rightmargin=0em}			% 오른쪽 여백  - 4em
+			\setlist[itemize]{itemindent=0em} 			% 점 내민 거리 label sep 과 같은면 점위치 까지 내민다
+			\setlist[itemize]{listparindent=3em}		% 본문 드려쓰기 간격
+	
+	
+			\setlist[itemize]{ topsep=0.0em, 			%  상단의 여유치
+						partopsep=0.0em, 		%  
+						parsep=0.0em, 
+						itemsep=0.0em, 
+						labelwidth=1em, 
+						leftmargin=2.5em,
+						labelsep=2em,			%  본문에서 라벨 까지의 거리
+						rightmargin=0em,		% 오른쪽 여백  - 4em
+						itemindent=0em, 		% 점 내민 거리 label sep 과 같은면 점위치 까지 내민다
+						listparindent=0em}		% 본문 드려쓰기 간격
+	
+%			\begin{itemize}
+	
+		%	-------------------------------------------------------------------------------
+		%		Label
+		%	-------------------------------------------------------------------------------
+			\renewcommand{\labelitemi}{$\bullet$}
+			\renewcommand{\labelitemii}{$\bullet$}
+%			\renewcommand{\labelitemii}{$\cdot$}
+			\renewcommand{\labelitemiii}{$\diamond$}
+			\renewcommand{\labelitemiv}{$\ast$}		
+	
+%			\renewcommand{\labelitemi}{$\blacksquare$}   	% 사각형 - 찬것
+%			\renewcommand\labelitemii{$\square$}		% 사각형 - 빈것	
+			
+
+
+
+
+
+
+% ------------------------------------------------------------------------------
+% Begin document (Content goes below)
+% ------------------------------------------------------------------------------ 표지
+	\begin{document}
+	
+			\dominitoc
+			\doparttoc			
+
+%			\dosecttoc
+%			\dosectlof
+%			\dosectlot
+
+			\title{ Git Github  }
+			\author{김대희}
+			\date{ 	2020년 
+					12월 
+					28일
+					일요일
+						}
+			\maketitle
+
+
+			\tableofcontents 		% 목차 출력
+%			\listoffigures 			% 그림 목차 출력
+			\cleardoublepage
+			\listoftables 			% 표 목차 출력
+
+
+
+
+
+		\mdfdefinestyle	{con_specification} {
+						outerlinewidth		=1pt			,%
+						innerlinewidth		=2pt			,%
+						outerlinecolor		=blue!70!black	,%
+						innerlinecolor		=white 			,%
+						roundcorner			=4pt			,%
+						skipabove			=1em 			,%
+						skipbelow			=1em 			,%
+						leftmargin			=0em			,%
+						rightmargin			=0em			,%
+						innertopmargin		=2em 			,%
+						innerbottommargin 	=2em 			,%
+						innerleftmargin		=1em 			,%
+						innerrightmargin		=1em 			,%
+						backgroundcolor		=gray!4			,%
+						frametitlerule		=true 			,%
+						frametitlerulecolor	=white			,%
+						frametitlebackgroundcolor=black		,%
+						frametitleaboveskip=1em 			,%
+						frametitlebelowskip=1em 			,%
+						frametitlefontcolor=white 			,%
+						}
+
+
+%	개정일력
+%	2020.12.26 첫 작업
+%	2020.12.28 깃 업로드
+%
+
+
+%	================================================================== Part			개요
+	\addtocontents{toc}{\protect\newpage}
+	\part{ 개요  }
+	\noptcrule
+	\parttoc				
+
+% ----------------------------------------------------------------------------- 	깃 시작하기
+%										
+% -----------------------------------------------------------------------------										
+	\section{ 깃 시작하기 }
+
+
+% ----------------------------------------------------------------------------- 	깃 역사		깃역사
+%										
+% -----------------------------------------------------------------------------										
+	\section{ 깃 역사}
+
+	\paragraph{짦게 보는 Git의 역사}
+
+			\begin{itemize}
+			\item 	2020년 리눅스 커널의 Bitkeeper 상용 DVGS 사용
+			\item 	2005년 Bitkeeper의 무료 사용이 제지된다.
+			\end{itemize}
+
+							
+	\paragraph{Git의 개발시 고려사항}
+
+
+			\begin{itemize}
+			\item 	빠른 속도
+			\item 	단순한 구조
+			\item 	비선층 개발 (수천개의 동시 다발적인 브랜치)
+			\item 	완벽한 분산
+			\item 	리눅스 커널 같은 대형프로젝트에도 유용할것 \\(속도나 데이터의 크기면에서)
+			\end{itemize}
+
+
+
+% ----------------------------------------------------------------------------- 	깃으로하고싶은것
+%										
+% -----------------------------------------------------------------------------										
+	\section{ 깃으로 하고 싶은것}
+
+			\begin{itemize}
+			\item 	구글 드라이버 같이 파일 보관 영역으로 사용
+			\item 	사무실 2층 도로공사에서 사용가능
+			\end{itemize}
+
+
+
+
+
+
+% ----------------------------------------------------------------------------- 	깃 설치하기
+%	
+% -----------------------------------------------------------------------------	
+	\chapter 	{깃 설치하기}
+
+
+
+
+% ----------------------------------------------------------------------------- 	깃 기본 프로그램
+%	
+% -----------------------------------------------------------------------------	
+	\section 	{깃 기본 프로그램}
+
+
+
+
+			\begin{itemize}	[
+						topsep=0.0em, 
+						parsep=0.0em, 
+						itemsep=0em, 
+						leftmargin=12.0em, 
+						labelwidth=3em, 
+						labelsep=3em
+						] 
+			\item [1.] 	알집 
+			\end{itemize}
+
+
+				\begin{enumerate}
+				\setlength\itemsep{-1.0em}
+				\item	알집
+				\item	Git
+				\item	GitHub Desktop
+				\item	Source Tree Setup
+				\item	VS Code
+				\item	notepad++
+				\end{enumerate}
+
+
+% ----------------------------------------------------------------------------- 	깃 설치하기
+%	
+% -----------------------------------------------------------------------------	
+	\section 	{깃 설치하기}
+
+
+% ----------------------------------------------------------------------------- 	깃 세팅
+%	
+% -----------------------------------------------------------------------------	
+	\section 	{깃 세팅}
+
+% ----------------------------------------------------------------------------- 	깃 설치 확인
+%	
+% -----------------------------------------------------------------------------	
+	\section 	{깃 설치 확인}
+
+
+		% ------------------------------------------------- tcolorbox package
+			\begin{tcolorbox}		[
+									title=커밋 config 확인
+								]
+				\begin{verbatim}
+					git config --list
+					diff.astextplain.textconv=astextplain
+					filter.lfs.clean=git-lfs clean -- %f
+					filter.lfs.smudge=git-lfs smudge -- %f
+					filter.lfs.process=git-lfs filter-process
+					filter.lfs.required=true
+					http.sslbackend=openssl
+					http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+					core.autocrlf=true
+					core.fscache=true
+					core.symlinks=false
+					pull.rebase=false
+					credential.helper=manager-core
+					credential.https://dev.azure.com.usehttppath=true
+					user.email=h01038395609@gmail.com
+					user.name=kimdaehee5609
+					filter.lfs.required=true
+					filter.lfs.clean=git-lfs clean -- %f
+					filter.lfs.smudge=git-lfs smudge -- %f
+					filter.lfs.process=git-lfs filter-process
+				\end{verbatim}
+			\end{tcolorbox}
+
+		% ------------------------------------------------- tcolorbox package
+			\begin{tcolorbox}		[
+									title=커밋 config 확인
+								]
+				\begin{verbatim}
+
+					color.ui=true
+					core.repositoryformatversion=0
+					core.filemode=false
+					core.bare=false
+					core.logallrefupdates=true
+					core.symlinks=false
+					core.ignorecase=true
+				\end{verbatim}
+			\end{tcolorbox}
+
+
+
+
+
+
+
+	
+%	================================================================== 		깃 기본 명령어
+	\addtocontents{toc}{\protect\newpage}
+	\chapter {깃 기본 명령어}
+	\noptcrule
+
+%	\newpage	
+%	\minitoc
+%	\secttoc
+
+
+
+% ----------------------------------------------------------------------------- 	저장소 생성
+%	
+% -----------------------------------------------------------------------------	
+	\section 	{저장소 생성 :  git init}
+
+
+% ----------------------------------------------------------------------------- 	git add
+%	
+% -----------------------------------------------------------------------------	
+	\section 	{git add}
+
+
+% ----------------------------------------------------------------------------- 	git commit
+%	
+% -----------------------------------------------------------------------------	
+	\section 	{git commit}
+
+
+% ----------------------------------------------------------------------------- 	git status
+%	
+% -----------------------------------------------------------------------------	
+	\section 	{git status}
+
+
+% ----------------------------------------------------------------------------- 	저장소 사용을 위한 명령
+%	
+% -----------------------------------------------------------------------------	
+	\section 	{저장소 사용을 위한 명령}
+
+
+%	================================================================== 		깃 설정하기
+	\addtocontents{toc}{\protect\newpage}
+	\chapter {깃 설정하기}
+	\noptcrule
+
+%	\newpage	
+	\minitoc
+%	\secttoc
+
+% ----------------------------------------------------------------------------- 	 Git 기본 설정
+%	
+% -----------------------------------------------------------------------------	
+	\section 	{ Git 기본 설정}
+
+
+	각자의 이름과 이메일 주소를 적는다
+
+
+		% ------------------------------------------------- tcolorbox package
+		\begin{tcolorbox}		[
+%								colback=green!5,
+								colback=red!5!white,
+								colframe=red!75!black,
+%								colframe=green!40!black,
+								title=깃 기본 설정
+								]
+			\$git config --glabal user.name  "kim dae hee 5609 " \\
+			\$git config --glabal user.email  "h 010 3839 5609 @ gmail . com" \\
+			\$git config --glabal color.ui true
+		\end{tcolorbox}
+
+
+		\begin{tcolorbox}
+			- global : 지금 로그온한 계정에 전체 설정 \\
+			- local : 현재 저장소 로컬 설정
+		\end{tcolorbox}
+
+
+% ----------------------------------------------------------------------------- 	 Git 설정하기
+%	
+% -----------------------------------------------------------------------------	
+	\section 	{ Git 설정하기}
+
+\paragraph{Git 설정하기}
+지금까지 Git이 어떻게 동작하고 Git을 어떻게 사용하는지 설명했다. 이제 Git을 좀 더 쉽고 편하게 사용할 수 있도록 도와주는 도구를 살펴본다. 
+이 장에서는 먼저 많이 쓰이는 설정 그리고 훅 시스템을 먼저 설명한다. 
+그 후에 Git을 내게 맞추어(Customize) 본다. Git을 자신의 프로젝트에 맞추고 편하게 사용하자.
+
+
+
+\paragraph{Git 설정하기}
+시작하기에서 git config 명령을 간단히 사용했었다. git config 명령으로 제일 먼저 하게 되는 작업은 이름과 이메일 주소를 설정하는 것이다.
+
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+
+여기서는 이렇게 설정하는 것 중에서 중요한 것만 몇 가지 배운다.
+
+우선 Git은 내장된 기본 규칙 따르지만, 설정된 것이 있으면 그에 따른다는 점을 생각해두자. Git은 먼저 /etc/gitconfig 파일을 찾는다. 
+이 파일은 해당 시스템에 있는 모든 사용자와 모든 저장소에 적용되는 설정 파일이다. git config 명령에 --system 옵션을 주면 이 파일을 사용한다.
+
+다음으로 ~/.gitconfig 파일을 찾는다. 이 파일은 해당 사용자에게만 적용되는 설정 파일이다. --global 옵션을 주면 Git은 이 파일을 사용한다.
+
+마지막으로 현재 작업 중인 저장소의 Git 디렉토리에 있는 .git/config 파일을 찾는다. 
+이 파일은 해당 저장소에만 적용된다. 
+git config 명령에 --local 옵션을 적용한 것과 같다. 
+(아무런 범위 옵션을 지정하지 않으면 Git은 기본적으로 --local 옵션을 적용한다)
+
+각 설정 파일에 중복된 설정이 있으면 설명한 “순서대로” 덮어쓴다. 
+예를 들어 .git/config 와 /etc/gitconfig 에 같은 설정이 들어 있다면 .git/config 에 있는 설정을 사용한다.
+
+\paragraph{Git 설정하기: Note}
+설정 파일 일반적인 텍스트파일로 쉽게 고쳐 쓸 수 있다. 보통 git config 명령을 사용하는 것이 더 편하다.
+
+\subsection{클라이언트 설정}
+
+설정이 영향을 미치는 대상에 따라 클라이언트 설정과 서버 설정으로 나눠볼 수 있다. 대부분은 개인작업 환경과 관련된 클라이언트 설정이다. Git에는 설정거리가 매우 많은데, 여기서는 워크플로를 관리하는 데 필요한 것과 주로 많이 사용하는 것만 설명한다. 한 번도 겪지 못할 상황에서나 유용한 옵션까지 다 포함하면 설정할 게 너무 많다. Git 버전마다 옵션이 조금씩 다른데, 아래와 같이 실행하면 설치한 버전에서 사용할 수 있는 옵션을 모두 보여준다.
+
+\$ man git-config
+어떤 옵션을 사용할 수 있는지 매우 자세히 설명하고 있다. http://git-scm.com/docs/git-config.html 페이지에서도 같은 내용을 볼 수 있다.
+
+core.editor
+Git은 편집기를 설정(\$VISUAL, \$EDITOR 변수로 설정)하지 않았거나 설정한 편집기를 찾을 수 없으면 vi 를 실행한다. 커밋할 때나 태그 메시지를 편집할 때 설정한 편집기를 실행한다. code.editor 설정으로 편집기를 설정한다.
+
+\$ git config --global core.editor emacs
+이렇게 설정하면 메시지를 편집할 때 환경변수에 설정한 편집기가 아니라 Emacs를 실행한다.
+
+commit.template
+커밋할 때 Git이 보여주는 커밋 메시지는 이 옵션에 설정한 템플릿 파일이다. 사용자 지정 커밋 템플릿 메시지가 주는 장점은 커밋 메시지를 작성할 때 일정한 스타일을 유지할 수 있다는 점이다.
+
+예를 들어 ~/.gitmessage.txt 파일을 아래와 같이 만든다.
+
+Subject line (try to keep under 50 characters)
+
+Multi-line description of commit,
+feel free to be detailed.
+
+[Ticket: X]
+커밋 메시지 템플릿을 보면 커밋 메시지를 작성할 때 제목은 일정 길이 이하로 짧게 하고(git log --oneline 으로 보기 좋게) 자세한 수정 내용은 한칸 공백 이후 서술하도록 하고 버그 트래킹 시스템이나 이슈 관리 시스템을 쓸 경우 이슈의 번호를 적도록 유도하고 있는 것을 볼 수 있다.
+
+이 파일을 commit.template 에 설정하면 Git은 git commit 명령이 실행하는 편집기에 이 메시지를 기본으로 넣어준다.
+
+\$ git config --global commit.template ~/.gitmessage.txt
+\$ git commit
+그러면 커밋할 때 아래와 같은 메시지를 편집기에 자동으로 채워준다.
+
+Subject line (try to keep under 60 characters)
+
+Multi-line description of commit,
+feel free to be detailed.
+
+
+\begin{verbatim}
+[Ticket: X]
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+# modified:   lib/test.rb
+#
+~
+~
+".git/COMMIT_EDITMSG" 14L, 297C
+
+\end{verbatim}
+
+소속 팀에 커밋 메시지 규칙이 있으면 그 규칙에 맞는 템플릿 파일을 만들고 시스템 설정에 설정해둔다. Git이 그 파일을 사용하도록 설정하면 규칙을 따르기가 쉬워진다.
+
+core.pager
+Git은 log 나 diff 같은 명령의 메시지를 출력할 때 페이지로 나누어 보여준다. 기본으로 사용하는 명령은 less 다. more 를 더 좋아하면 more 라고 설정한다. 페이지를 나누고 싶지 않으면 빈 문자열로 설정한다.
+
+\$ git config --global core.pager ''
+이 명령을 실행하면 Git은 길든지 짧든지 결과를 한 번에 다 보여 준다.
+
+user.signingkey
+이 설정은 내 작업에 서명하기 에서 설명했던 Annotated Tag를 만들 때 유용하다. 사용할 GPG 키를 설정해 둘 수 있다. 아래처럼 GPG 키를 설정하면 서명할 때 편리하다.
+
+\$ git config --global user.signingkey <gpg-key-id>
+git tag 명령을 실행할 때 키를 생략하고 서명할 수 있다.
+
+\$ git tag -s <tag-name>
+core.excludesfile
+Git에서 git add 명령으로 추적할 파일에 포함하지 않을 파일은 .gitignore 에 해당 패턴을 적으면 된다고 파일 무시하기에서 설명했다.
+
+한 저장소 안에서뿐 아니라 어디에서라도 Git에 포함하지 않을 파일을 설정할 수 있다. 
+예를 들어 Mac을 쓰는 사람이라면 .DS\_Store 파일을 자주 보았을 것이다. 
+Emacs나 Vim를 쓰다 보면 이름 끝에 \~, .swp 붙여둔 임시 파일도 있다.
+
+.gitignore 파일처럼 무시할 파일을 설정할 수 있는데 ~/.gitignore\_global 파일 안에 아래 내용으로 입력해두고
+
+*~
+.*.swp
+.DS\_Store
+git config --global core.excludesfile ~/.gitignore\_global 명령으로 설정을 추가하면 더는 위와 같은 파일이 포함되지 않을 것이다.
+
+help.autocorrect
+명령어를 잘못 입력하면 Git은 메시지를 아래와 같이 보여 준다.
+
+\$ git chekcout master
+git: 'chekcout' is not a git command. See 'git --help'.
+
+Did you mean this?
+    checkout
+Git은 어떤 명령을 입력하려고 했을지 추측해서 보여주긴 하지만 직접 실행하진 않는다. 그러나 help.autocorrect 를 1로 설정하면 명령어를 잘못 입력해도 Git이 자동으로 해당 명령어를 찾아서 실행해준다.
+
+\$ git chekcout master
+WARNING: You called a Git command named 'chekcout', which does not exist.
+Continuing under the assumption that you meant 'checkout'
+in 0.1 seconds automatically...
+여기서 재밌는 것은 “0.1 seconds” 이다. 사실 help.autocorrect 설정에 사용하는 값은 1/10 초 단위의 숫자를 나타낸다. 만약 50이라는 값으로 설정한다면 자동으로 고친 명령을 실행할 때 Git은 5초간 명령을 실행하지 않고 기다려줄 수 있다.
+
+\subsection{컬러 터미널}
+
+\paragraph{}
+사람이 쉽게 인식할 수 있도록 터미널에 결과를 컬러로 출력할 수 있다. 
+터미널 컬러와 관련된 옵션은 매우 다양하기 때문에 꼼꼼하게 설정할 수 있다.
+
+color.ui
+
+\paragraph{기능 끄기}
+Git은 기본적으로 터미널에 출력하는 결과물을 알아서 색칠하지만, 이 색칠하는 기능을 끄고 싶다면 한 가지 설정만 해 두면 된다. 
+아래와 같은 명령을 실행하면 더는 색칠된 결과물을 내지 않는다.
+
+\$ git config --global color.ui false
+
+\paragraph{auto}
+컬러 설정의 기본 값은 auto 로 터미널에 출력할 때는 색칠하지만, 결과가 리다이렉션되거나 파일로 출력되면 색칠하지 않는다.
+
+\paragraph{always}
+always 로 설정하면 터미널이든 다른 출력이든 상관없이 색칠하여 내보낸다. 
+대개 이 값을 설정해서 사용하지 않는다. 
+
+\paragraph{--color}
+--color 옵션을 사용하면 강제로 결과를 색칠해서 내도록 할 수 있기 때문이다. 대부분은 기본 값이 낫다.
+
+\paragraph{}
+color.* \\
+Git은 좀 더 꼼꼼하게 컬러를 설정하는 방법을 제공한다. 아래와 같은 설정들이 있다. 모두 true, false, always 중 하나를 고를 수 있다.
+
+
+			\begin{itemize}[	topsep=0.0em,itemsep=0.0em,
+							leftmargin=4em, labelsep=3em ]
+			\item	color.branch 
+			\item	color.diff 
+			\item	color.interactive
+			\item	color.status 
+			\end{itemize}	
+
+
+또한, 각 옵션의 컬러를 직접 지정할 수도 있다. 
+아래처럼 설정하면 diff 명령에서 meta 정보의 포그라운드는 blue, 백그라운드는 black, 테스트는 bold로 바뀐다.
+
+\$ git config --global color.diff.meta "blue black bold" \\
+
+\paragraph{컬러}
+
+컬러는 normal, black, red, green, yellow, blue, magenta, cyan, white 중에서 고를 수 있다. 
+
+
+			\begin{itemize}	[	
+								topsep=0.0em,
+								itemsep=0.0em,
+								leftmargin=4em, 
+								labelsep=3em 
+								]
+			\item	normal, 
+			\item	black, 
+			\item	red, 
+			\item	green, 
+			\item	yellow, 
+			\item	blue, 
+			\item	magenta, 
+			\item	cyan, 
+			\item	white
+			\end{itemize}	
+
+
+\paragraph 	{텍스트 속성}
+
+텍스트 속성은 bold, dim, ul (underline), blink, reverse 중에서 고를 수 있다.
+
+			\begin{itemize}	[	
+								topsep=0.0em,
+								itemsep=0.0em,
+								leftmargin=4em, 
+								labelsep=3em 
+								]
+			\item	bold, 
+			\item	dim, 
+			\item	ul (underline), 
+			\item	blink, 
+			\item	reverse 
+			\end{itemize}	
+
+
+
+\subsection{다른 Merge, Diff 도구 사용하기}
+
+
+Git에 들어 있는 diff 도구 말고 다른 도구로 바꿀 수 있다. 화려한 GUI 도구로 바꿔서 좀 더 편리하게 충돌을 해결할 수 있다. 여기서는 Perforce의 Merge 도구인 P4Merge로 설정하는 것을 보여준다. P4Merge는 무료인데다 꽤 괜찮다.
+
+P4Merge는 중요 플랫폼을 모두 지원하기 때문에 웬만한 환경이면 사용할 수 있다. 여기서는 Mac과 Linux 시스템에 설치하는 것을 보여준다. Windows에서 사용하려면 /usr/local/bin 경로만 Windows 경로로 바꿔준다.
+
+먼저 https://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools 에서 P4Merge를 내려받는다. 
+그 후에 P4Merge 에 쓸 Wrapper 스크립트를 만든다. 
+필자는 Mac 사용자라서 Mac 경로를 사용한다. 
+어떤 시스템이든 p4merge 가 설치된 경로를 사용하면 된다. 
+예제에서는 extMerge 라는 Merge 용 Wrapper 스크립트를 만들고 이 스크립트로 넘어오는 모든 아규먼트를 p4merge 프로그램으로 넘긴다.
+
+\begin{verbatim}
+	\$ cat /usr/local/bin/extMerge
+%	#! / bin / sh
+\end{verbatim}
+
+/Applications/p4merge.app/Contents/MacOS/p4merge \$*
+그리고 diff용 Wrapper도 만든다. 이 스크립트로 넘어오는 아규먼트는 총 7개지만 그 중 2개만 Merge Wrapper로 넘긴다. Git이 diff 프로그램에 넘겨주는 아규먼트는 아래와 같다.
+
+path old-file old-hex old-mode new-file new-hex new-mode
+이 중에서 old-file 과 new-file 만 사용하는 wrapper 스크립트를 만든다.
+
+\begin{verbatim}
+\$ cat /usr/local/bin/extDiff
+#!/bin/sh
+[ \$# -eq 7 ] && /usr/local/bin/extMerge "\$2" "\$5"
+\end{verbatim}
+
+이 두 스크립트에 실행 권한을 부여한다.
+
+\$ sudo chmod +x /usr/local/bin/extMerge
+\$ sudo chmod +x /usr/local/bin/extDiff
+Git config 파일에 이 스크립트를 모두 추가한다. 설정해야 하는 옵션이 좀 많다. merge.tool 로 무슨 Merge 도구를 사용할지, mergetool.*.cmd 로 실제로 어떻게 명령어를 실행할지, mergetool.trustExitCode 로 Merge 도구가 반환하는 exit 코드가 Merge의 성공 여부를 나타내는지, diff.external 은 diff 할 때 실행할 명령어가 무엇인지를 설정할 때 사용한다. 모두 git config 명령으로 설정한다.
+
+\$ git config --global merge.tool extMerge
+\$ git config --global mergetool.extMerge.cmd \
+  'extMerge "\$BASE" "\$LOCAL" "\$REMOTE" "\$MERGED"'
+\$ git config --global mergetool.extMerge.trustExitCode false
+\$ git config --global diff.external extDiff
+~/.gitconfig/ 파일을 직접 편집해도 된다.
+
+[merge]
+  tool = extMerge
+[mergetool "extMerge"]
+  cmd = extMerge "\$BASE" "\$LOCAL" "\$REMOTE" "\$MERGED"
+  trustExitCode = false
+[diff]
+  external = extDiff
+설정을 완료하고 나서 아래와 같이 diff 명령어를 실행한다.
+
+\begin{verbatim}
+\$ git diff 32d1776b1^ 32d1776b1
+\end{verbatim}
+
+diff 결과가 터미널에 출력되는 대신 P4Merge가 실행되어 아래처럼 Diff 결과를 보여준다.
+
+P4Merge.
+Figure 143. P4Merge.
+브랜치를 Merge 할 때 충돌이 나면 git mergetool 명령을 실행한다. 이 명령을 실행하면 GUI 도구로 충돌을 해결할 수 있도록 P4Merge를 실행해준다.
+
+Wrapper를 만들어 설정해두면 다른 Diff, Merge 도구로 바꾸기도 쉽다. 예를 들어, KDiff3를 사용하도록 extDiff 와 extMerge 스크립트를 수정한다.
+
+\$ cat /usr/local/bin/extMerge
+%#!/bin/sh
+/Applications/kdiff3.app/Contents/MacOS/kdiff3 \$*
+이제부터 Git은 Diff 결과를 보여주거나 충돌을 해결할 때 KDiff3 도구를 사용한다.
+
+어떤 Merge 도구는 Git에 미리 설정이 들어 있다. 그래서 추가로 스크립트를 작성하거나 하는 설정 없이 사용할 수 있는 것도 있다. 아래와 같은 명령으로 확인해볼 수 있다.
+
+\$ git mergetool --tool-help
+'git mergetool --tool=<tool>' may be set to one of the following:
+        emerge
+        gvimdiff
+        gvimdiff2
+        opendiff
+        p4merge
+        vimdiff
+        vimdiff2
+
+The following tools are valid, but not currently available:
+        araxis
+        bc3
+        codecompare
+        deltawalker
+        diffmerge
+        diffuse
+        ecmerge
+        kdiff3
+        meld
+        tkdiff
+        tortoisemerge
+        xxdiff
+
+Some of the tools listed above only work in a windowed
+environment. If run in a terminal-only session, they will fail.
+Diff 도구로는 다른 것을 사용하지만, Merge 도구로는 KDiff3를 사용하고 싶은 경우에는 kdiff3 명령을 실행경로로 넣고 아래와 같이 설정하기만 하면 된다.
+
+\$ git config --global merge.tool kdiff3
+extMerge 와 extDiff 파일을 만들지 않고 이렇게 Merge 도구만 `kdiff3`로 설정하고 Diff 도구는 Git에 원래 들어 있는 것을 사용할 수 있다.
+
+Formatting and Whitespace
+협업할 때 겪는 소스 포맷(Formatting)과 공백 문제는 미묘하고 난해하다. 동료 사이에 사용하는 플랫폼이 다를 때는 특히 더 심하다. 다른 사람이 보내온 Patch는 공백 문자 패턴이 미묘하게 다를 확률이 높다. 편집기가 몰래 공백문자를 추가해 버릴 수도 있고 크로스-플랫폼 프로젝트에서 Windows 개발자가 라인 끝에 CR(Carriage-Return) 문자를 추가해 버렸을 수도 있다. Git에는 이 이슈를 돕는 몇 가지 설정이 있다.
+
+core.autocrlf
+Windows에서 개발하는 동료와 함께 일하면 라인 바꿈(New Line) 문자에 문제가 생긴다. Windows는 라인 바꿈 문자로 CR(Carriage-Return)과 LF(Line Feed) 문자를 둘 다 사용하지만, Mac과 Linux는 LF 문자만 사용한다. 아무것도 아닌 것 같지만, 크로스 플랫폼 프로젝트에서는 꽤 성가신 문제다. Windows에서 사용하는 많은 편집기가 자동으로 LF 스타일의 라인 바꿈 스타일을 CRLF로 바꾸거나 Enter 키를 입력하면 CRLF 스타일을 사용하기 때문이다.
+
+Git은 커밋할 때 자동으로 CRLF를 LF로 변환해주고 반대로 Checkout 할 때 LF를 CRLF로 변환해 주는 기능이 있다. core.autocrlf 설정으로 이 기능을 켤 수 있다. Windows에서 이 값을 true로 설정하면 Checkout 할 때 LF 문자가 CRLF 문자로 변환된다.
+
+\$ git config --global core.autocrlf true
+라인 바꿈 문자로 LF를 사용하는 Linux와 Mac에서는 Checkout 할 때 Git이 LF를 CRLF로 변환할 필요가 없다. 게다가 우연히 CRLF가 들어간 파일이 저장소에 들어 있어도 Git이 알아서 고쳐주면 좋을 것이다. core.autocrlf 값을 input으로 설정하면 커밋할 때만 CRLF를 LF로 변환한다.
+
+\$ git config --global core.autocrlf input
+이 설정을 이용하면 Windows에서는 CRLF를 사용하고 Mac, Linux, 저장소에서는 LF를 사용할 수 있다.
+
+Windows 플랫폼에서만 개발하면 이 기능이 필요 없다. 이 옵션을 false 라고 설정하면 이 기능이 꺼지고 CR 문자도 저장소에도 저장된다.
+
+\$ git config --global core.autocrlf false
+core.whitespace
+Git에는 공백 문자를 다루는 방법으로 네 가지가 미리 정의돼 있다. 두 가지는 기본적으로 켜져 있지만 끌 수 있고 나머지 두 가지는 꺼져 있지만 켤 수 있다.
+
+먼저 기본적으로 켜져 있는 것을 살펴보자. blank-at-eol 는 각 라인 끝에 공백이 있는지 찾고, blank-at-eof 는 파일 끝에 추가한 빈 라인이 있는지 찾고, space-before-tab 은 모든 라인에서 처음에 tab보다 공백이 먼저 나오는지 찾는다.
+
+기본적으로 꺼져 있는 나머지 세 개는 indent-with-non-tab 과 tab-in-indent 과 cr-at-eol 이다. intent-with-non-tab 은 tab이 아니라 공백으로(tabwidth 설정에 영향받음) 시작하는 라인이 있는지 찾고 cr-at-eol 은 라인 끝에 CR 문자가 있어도 괜찮다고 Git에 알리는 것이다.
+
+core.whitespace 옵션으로 이 네 가지 방법을 켜고 끌 수 있다. 설정에서 해당 옵션을 빼버리거나 이름이 - 로 시작하면 기능이 꺼진다. 예를 들어, 다른 건 다 켜고 space-before-tab 옵션만 끄려면 아래와 같이 설정한다. trailing-space 옵션은 blank-at-eol 옵션과 blank-at-eof 옵션을 의미한다.
+
+\$ git config --global core.whitespace \
+    trailing-space,-space-before-tab,indent-with-non-tab,tab-in-indent,cr-at-eol
+또는 각 부분에 대해서 설정을 할 수도 있다.
+
+\$ git config --global core.whitespace \
+    -space-before-tab,indent-with-non-tab,tab-in-indent,cr-at-eol
+git diff 명령을 실행하면 Git은 이 설정에 따라 검사해서 컬러로 표시해준다. 그래서 좀 더 쉽게 검토해서 커밋할 수 있다. git apply 명령으로 Patch를 적용할 때도 이 설정을 이용할 수 있다. 아래처럼 명령어를 실행하면 해당 Patch가 공백문자 정책에 들어맞는지 확인할 수 있다.
+
+\$ git apply --whitespace=warn <patch>
+아니면 Git이 자동으로 고치도록 할 수 있다.
+
+\$ git apply --whitespace=fix <patch>
+이 옵션은 git rebase 명령에서도 사용할 수 있다. 공백 문제가 있는 커밋을 Upstream에 Push 하기 전에 --whitespace=fix 옵션을 주고 Rebase 하면 Git은 다시 Patch를 적용하면서 공백을 설정한 대로 고친다.
+
+
+
+\subsection{서버 설정}
+서버 설정은 많지 않지만, 꼭 짚고 넘어가야 하는 것이 몇 개 있다.
+
+receive.fsckObjects
+Git은 Push 할 때마다 각 개체가 SHA-1 체크섬에 맞는지 잘못된 개체가 가리키고 있는지 검사하게 할 수 있다. 기본적으로 이 기능이 동작하지 않게 설정이 되어 있는데 개체를 점검하데 상당히 시간이 걸리기 때문에 Push 하는 시간이 늘어난다. 얼마나 늘어나는지는 저장소 크기와 Push 하는 양에 달렸다. 
+
+\paragraph{}
+receive.fsckOBjects 값을 true로 설정하면 Git이 Push 할 때마다 검증한다.
+
+\$ git config --system receive.fsckObjects true
+이렇게 설정하면 Push 할 때마다 검증하기 때문에 클라이언트는 잘못된 데이터를 Push 하지 못한다.
+
+receive.denyNonFastForwards
+이미 Push 한 커밋을 Rebase 해서 다시 Push 하지 못하게 할 수 있다. 브랜치를 Push 할 때 해당 리모트 브랜치가 가리키는 커밋이 Push 하려는 브랜치에 없을 때 Push 하지 못하게 할 수 있다. 보통은 이런 정책이 좋고 git push 명령에 -f 옵션을 주면 강제로 Push 할 수 있다.
+
+receive.denyNonFastForwards 옵션을 켜면 Fast-forward로 Push 할 수 없는 브랜치는 아예 Push 하지 못한다.
+
+\$ git config --system receive.denyNonFastForwards true
+사용자마다 다른 정책을 적용하고 싶으면 서버 훅을 사용해야 한다. 서버의 receive 훅으로 할 수 있고 이 훅도 이 장에서 설명한다.
+
+receive.denyDeletes
+receive.denyNonFastForwards 와 비슷한 정책으로 receive.denyDeletes 라는 것이 있다. 이 설정을 켜면 브랜치를 삭제하는 Push가 거절된다.
+
+\$ git config --system receive.denyDeletes true
+이제 브랜치나 Tag를 삭제하는 Push는 거절된다. 아무도 삭제할 수 없다. 리모트 브랜치를 삭제하려면 직접 손으로 server의 ref 파일을 삭제해야 한다. 그리고 사용자마다 다른 정책을 적용시키는 ACL을 만드는 방법도 있다. 이 방법은 정책 구현하기 에서 다룬다.
+
+
+
+
+%	================================================================== Part			브랜치
+	\addtocontents{toc}{\protect\newpage}
+	\part 	{브랜치}
+
+	\noptcrule
+	\parttoc	
+	\minitoc
+				
+
+
+% ----------------------------------------------------------------------------- 	브랜치
+%										
+% -----------------------------------------------------------------------------										
+	\section{브랜치}
+
+			\begin{itemize}	[	
+							topsep=0.0em,
+							itemsep=0.0em,
+							leftmargin=6em, 
+							labelsep=3em 
+							]
+				\item 	branch 목록 보기
+				\item 	옵션: origin
+				\item	원격 branch 목록 보기
+				\item	branch 이동: checkout
+				\item	브랜치 병합: merge
+				\item	branch 삭제, 목록 업데이트
+			\end{itemize}
+
+
+master branch란 모든 repository의 기본 혹은 메인이라고 보면 된다. 
+일반적으로 repo의 모든 것은 master branch를 중심으로 행해진다.
+
+큰 프로젝트든 개인 프로젝트이든 최종 결과물은 master branch에 있기 마련이며, 
+master branch로부터 파생된 다른 branch들로부터 수정 사항을 만든 다음 
+master에 병합하는 과정을 거치게 된다.
+
+여러 사람이 협업할 경우 각자 따로 브랜치를 쓰게 되며, 
+각 브랜치에서는 새로운 기능을 개발하거나 버그 수정이 이루어진다. 
+물론 완료되면 master branch에 병합되게 된다.
+
+위의 설명이 정석적인 git repo의 운영방법이고, 
+master branch에는 일반적으로 직접 수정을 가하지 않는다. 
+따라서 별다른 일이 없다면 본 글에서부터는 master branch에 직접 commit을 날리지 않고, 
+branch를 만든 다음 병합하는 과정을 거칠 것이다.
+
+잠깐 브라우저를 켜서 브랜치 부분을 클릭해 보자.
+
+\paragraph{branch 목록 보기}
+
+목록을 보는 옵션은 여러 가지가 있다. git branch 혹은 git branch --list를 입력해 보자.
+
+		\begin{tcolorbox}
+ 		git branch  --list
+		\end{tcolorbox}
+
+위 명령은 local repo에 저장되어 있는 branch들의 리스트를 보여 준다. 
+다른 branch를 만들지 않았기 때문에 master 하나밖에 보이지 않을 것이다.
+
+이제 여러분은 다음과 같은 형태의 트리를 갖고 있다.
+그렇다. branch는 tree의 것이다.
+
+조금 더 자세하게 그리기 위해, git log --oneline을 명령창에 입력한다. 
+무엇을 하는 것인지 잊어버리지는 않았을 것이다.
+
+		\begin{tcolorbox}
+ 		git branch  -- one line
+		\end{tcolorbox}
+
+
+\paragraph{원격 branch 목록 보기}
+이제 dummy repo는 잊어버리고, 원래 하던 것으로 돌아오자.
+
+local repo 말고 remote repo의 브랜치를 알고 싶다면 다음 중 하나를 입력한다.
+
+		\begin{tcolorbox}
+		git branch -r
+		git branch –remote
+		\end{tcolorbox}
+
+local이랑 remote 전부 보고 싶으면 다음을 입력한다.
+
+		\begin{tcolorbox}
+		git branch -a
+		git branch –all
+		\end{tcolorbox}
+
+		\begin{itemize}	[							leftmargin=6em]
+		\item 	-r 옵션과 -a 옵션의 remote repo 표기가 조금 다르다.
+		\item -a 옵션은 local repo와 remote repo를 구분하기 위해 ‘remotes/’를 remote repo 앞에 붙인다.
+		\item -r 옵션은 remote repo만 보여주기 때문에 ‘remotes/’ 표시가 필요 없다.
+		\end{itemize}
+
+	\section{브랜치 만들기 }
+
+		'issue1' 이라는 이름으로 새로운 브랜치를 작성합니다.\\
+		브랜치는 branch 란 명령어로 만들 수 있습니다.
+
+		\begin{tcolorbox}
+		\$ git branch 〈branchname〉
+		\end{tcolorbox}
+
+
+'issue1' 이라는 이름으로 브랜치를 만들어 봅시다.
+
+		\begin{tcolorbox}
+		\$ git branch issue1
+		\end{tcolorbox}
+
+옵션을 지정하지 않고 branch 명령어를 실행하면 브랜치 목록 전체를 확인할 수 있습니다. 앞 부분에 * 이 붙어있는 것이 현재 선택된 브랜치입니다.
+		\begin{tcolorbox}
+		\$ git branch  \\
+		  issue1  \\
+		* master  
+		\end{tcolorbox}
+
+이 시점까지의 이력을 보면 다음과 같습니다.
+
+
+
+
+
+
+	\section{브랜치 전환하기 }
+	\section{브랜치 병합하기 }
+	\section{브랜치 삭제하기 }
+	\section{브랜치 동시에 여러 작업 }
+	\section{브랜치 종류 }
+
+
+Git Branch 종류 (5가지)
+Gitflow Workflow에서는 항상 유지되는 메인 브랜치들(master, develop)과 
+일정 기간 동안만 유지되는 보조 브랜치들(feature, release, hotfix)을 포함하여 총 5가지의 브랜치를 사용한다.
+
+			\begin{itemize}	[	
+							topsep=0.0em,
+							itemsep=0.0em,
+							leftmargin=6em, 
+							labelsep=3em 
+							]
+				\item	master,
+				\item	develop
+				\item	feature, 
+				\item	release, 
+				\item	hotfix
+			\end{itemize}
+아래는 Gitflow Workflow 방법에서 사용하는 브랜치의 흐름이다.
+
+
+	\subsection{1. Master Branch}
+		제품으로 출시될 수 있는 브랜치
+		배포(Release) 이력을 관리하기 위해 사용. 즉, 배포 가능한 상태만을 관리한다.
+		https://gmlwjd9405.github.io/2018/05/11/types-of-git-branch.html
+
+	\subsection{2. Develop Branch}
+다음 출시 버전을 개발하는 브랜치
+기능 개발을 위한 브랜치들을 병합하기 위해 사용. 즉, 모든 기능이 추가되고 버그가 수정되어 배포 가능한 안정적인 상태라면 develop 브랜치를 ‘master’ 브랜치에 병합(merge)한다.
+평소에는 이 브랜치를 기반으로 개발을 진행한다.
+https://gmlwjd9405.github.io/2018/05/11/types-of-git-branch.html
+
+
+	\subsection{3. Feature branch}
+
+		\paragraph{기능을 개발하는 브랜치}
+		feature 브랜치는 새로운 기능 개발 및 버그 수정이 필요할 때마다 ‘develop’ 브랜치로부터 분기한다. 
+		feature 브랜치에서의 작업은 기본적으로 공유할 필요가 없기 때문에, 자신의 로컬 저장소에서 관리한다.
+		개발이 완료되면 ‘develop’ 브랜치로 병합(merge)하여 다른 사람들과 공유한다.
+		
+		\paragraph{}
+
+		\begin{itemize}
+			\item		‘develop’ 브랜치에서 새로운 기능에 대한 feature 브랜치를 분기한다.
+			\item		새로운 기능에 대한 작업 수행한다.
+			\item		작업이 끝나면 ‘develop’ 브랜치로 병합(merge)한다.
+			\item		더 이상 필요하지 않은 feature 브랜치는 삭제한다.
+			\item		새로운 기능에 대한 ‘feature’ 브랜치를 중앙 원격 저장소에 올린다.(push)
+		\end{itemize}
+
+		\paragraph{feature 브랜치 이름 정하기}
+
+		\begin{itemize}
+			\item		master, develop, release-(RB\_), or hotfix- 제외
+			\item		(feature/기능요약) 형식을 추천 EX) feature/login
+		\end{itemize}
+
+
+		\paragraph{feature 브랜치 생성 및 종료 과정}
+		.\\	
+
+
+		\begin{tcolorbox}
+			// feature 브랜치(feature/login)를 'develop' 브랜치('master' 브랜치에서 따는 것이 아니다!)에서 분기\\
+			\$ git checkout -b feature/login develop\\
+			/* ~ 새로운 기능에 대한 작업 수행 ~ */\\
+
+		/* feature 브랜치에서 모든 작업이 끝나면 */\\
+		// 'develop' 브랜치로 이동한다.\\
+		\$ git checkout develop \\
+		// 'develop' 브랜치에 feature/login 브랜치 내용을 병합(merge)한다. \\
+		 --no-ff 옵션: 아래에 추가 설명\\
+		\$ git merge --no-ff feature/login\\
+		// -d 옵션: feature/login에 해당하는 브랜치를 삭제한다.\\
+		\$ git branch -d feature/login	\\
+		// 'develop' 브랜치를 원격 중앙 저장소에 올린다.	\\
+		\$ git push origin develop 
+		\end{tcolorbox}
+
+		\paragraph{--no-ff 옵션}
+		새로운 커밋 객체를 만들어 ‘develop’ 브랜치에 merge 한다.
+		이것은 ‘feature’ 브랜치에 존재하는 커밋 이력을 모두 합쳐서 
+		하나의 새로운 커밋 객체를 만들어 ‘develop’ 브랜치로 병합(merge)하는 것이다.
+
+
+
+
+	\subsection{4. Release Branch}
+
+			\paragraph{이번 출시 버전을 준비하는 브랜치}
+			배포를 위한 전용 브랜치를 사용함으로써 한 팀이 해당 배포를 준비하는 동안 다른 팀은 다음 배포를 위한 기능 개발을 계속할 수 있다. 
+			즉, 딱딱 끊어지는 개발 단계를 정의하기에 아주 좋다.
+			예를 들어, ‘이번 주에 버전 1.3 배포를 목표로 한다!’라고 팀 구성원들과 쉽게 소통하고 합의할 수 있다는 말이다.
+			
+		\begin{itemize}
+\item		‘develop’ 브랜치에서 배포할 수 있는 수준의 기능이 모이면 또는 정해진 배포 일정이 되면, release 브랜치를 분기한다.
+			\begin{itemize}
+			\item		release 브랜치를 만드는 순간부터 배포 사이클이 시작된다.
+			\item		release 브랜치에서는 배포를 위한 최종적인 버그 수정, 문서 추가 등 릴리스와 직접적으로 관련된 작업을 수행한다.
+			\item		직접적으로 관련된 작업들을 제외하고는 release 브랜치에 새로운 기능을 추가로 병합(merge)하지 않는다.
+			\end{itemize}
+\item		‘release’ 브랜치에서 배포 가능한 상태가 되면(배포 준비가 완료되면),
+			\begin{itemize}
+			\item		배포 가능한 상태: 새로운 기능을 포함한 상태로 모든 기능이 정상적으로 동작 하는 상태
+			\item		‘master’ 브랜치에 병합한다. (이때, 병합한 커밋에 Release 버전 태그를 부여!)
+			\item		배포를 준비하는 동안 release 브랜치가 변경되었을 수 있으므로 배포 완료 후 ‘develop’ 브랜치에도 병합한다.
+			\end{itemize}
+			\end{itemize}
+
+
+			이때, 다음 번 배포(Release)를 위한 개발 작업은 ‘develop’ 브랜치에서 계속 진행해 나간다.
+			
+			\paragraph{}release 브랜치 이름 정하기
+
+			\begin{itemize}
+				\item release-RB\_* 또는 release-* 또는 release/* 처럼 이름 짓는 것이 일반적인 관례
+				\item [release-* ] 형식을 추천 EX) release-1.2
+			\end{itemize}
+			
+			
+			\paragraph{release 브랜치 생성 및 종료 과정}
+.\\
+			
+		\begin{tcolorbox}
+			// release 브랜치(release-1.2)를 'develop' 브랜치('master' 브랜치에서 따는 것이 아니다!)에서 분기
+			\$ git checkout -b release-1.2 develop \\
+			/* ~ 배포 사이클이 시작 ~ */ \\
+			/* release 브랜치에서 배포 가능한 상태가 되면 */  \\
+			// 'master' 브랜치로 이동한다.  \\
+			\$ git checkout master  \\
+			// 'master' 브랜치에 release-1.2 브랜치 내용을 병합(merge)한다. \\
+			\# --no-ff 옵션: 위의 추가 설명 참고 \\
+			\$ git merge --no-ff release-1.2 \\
+			// 병합한 커밋에 Release 버전 태그를 부여한다. \\
+			\$ git tag -a 1.2 \\
+			/* 'release' 브랜치의 변경 사항을 'develop' 브랜치에도 적용 */  \\
+			// 'develop' 브랜치로 이동한다.  \\
+			\$ git checkout develop  \\
+			// 'develop' 브랜치에 release-1.2 브랜치 내용을 병합(merge)한다.  \\
+			\$ git merge --no-ff release-1.2  \\
+			// -d 옵션: release-1.2에 해당하는 브랜치를 삭제한다.  \\
+			\$ git branch -d release-1.2  \\
+		\end{tcolorbox}
+
+			
+
+	\section{브랜치}
+
+
+
+			\paragraph{출시 버전에서 발생한 버그를 수정 하는 브랜치} 
+			배포한 버전에 긴급하게 수정을 해야 할 필요가 있을 경우, ‘master’ 브랜치에서 분기하는 브랜치이다. 
+			‘develop’ 브랜치에서 문제가 되는 부분을 수정하여 배포 가능한 버전을 만들기에는 시간도 많이 소요되고 안정성을 보장하기도 어려우므로 
+			바로 배포가 가능한 ‘master’ 브랜치에서 직접 브랜치를 만들어 필요한 부분만을 수정한 후 다시 ‘master’브랜치에 병합하여 이를 배포해야 하는 것이다.
+			
+			\begin{itemize}
+			\item 배포한 버전에 긴급하게 수정을 해야 할 필요가 있을 경우,
+				\begin{itemize}
+					\item ‘master’ 브랜치에서 hotfix 브랜치를 분기한다. (‘hotfix’ 브랜치만 master에서 바로 딸 수 있다.)
+				\end{itemize}
+			\item 문제가 되는 부분만을 빠르게 수정한다.
+				\begin{itemize}
+					\item 다시 ‘master’ 브랜치에 병합(merge)하여 이를 안정적으로 다시 배포한다.
+					\item 새로운 버전 이름으로 태그를 매긴다.
+					\item hotfix 브랜치에서의 변경 사항은 ‘develop’ 브랜치에도 병합(merge)한다.
+				\end{itemize}
+			\end{itemize}
+			
+			
+			버그 수정만을 위한 ‘hotfix’ 브랜치를 따로 만들었기 때문에, 다음 배포를 위해 개발하던 작업 내용에 전혀 영향을 주지 않는다. ‘hotfix’ 브랜치는 master 브랜치를 부모로 하는 임시 브랜치라고 생각하면 된다.
+			
+				\begin{itemize}
+					\item hotfix 브랜치 이름 정하기 \\
+							\[hotfix-* \] 형식을 추천 EX) hotfix-1.2.1
+					\item hotfix 브랜치 생성 및 종료 과정
+				\end{itemize}
+
+
+
+		\begin{tcolorbox}
+		\begin{quote}
+			// release 브랜치(hotfix-1.2.1)를 'master' 브랜치(유일!)에서 분기\\
+			\$ git checkout -b hotfix-1.2.1 master \\
+			/* ~ 문제가 되는 부분만을 빠르게 수정 ~ */ \\
+			/* 필요한 부분을 수정한 후 */ \\
+			// 'master' 브랜치로 이동한다.  \\
+			\$ git checkout master \\
+			// 'master' 브랜치에 hotfix-1.2.1 브랜치 내용을 병합(merge)한다.  \\
+			\$ git merge --no-ff hotfix-1.2.1 \\
+			// 병합한 커밋에 새로운 버전 이름으로 태그를 부여한다. \\
+			\$ git tag -a 1.2.1  \\
+			/* 'hotfix' 브랜치의 변경 사항을 'develop' 브랜치에도 적용 */  \\
+			// 'develop' 브랜치로 이동한다.  \\
+			\$ git checkout develop  \\
+			// 'develop' 브랜치에 hotfix-1.2.1 브랜치 내용을 병합(merge)한다.  \\
+			\$ git merge --no-ff hotfix-1.2.1  \\
+		\end{quote}
+		\end{tcolorbox}
+
+
+
+%	================================================================== Part			마크 다운 작성		마크다운
+	\addtocontents{toc}{\protect\newpage}
+	\part 	{마크 다운 작성 }
+	\noptcrule
+	\parttoc				
+
+			
+			% ----------------------------------------------------------------------------- 	마크 다운 작성
+			%										
+			% -----------------------------------------------------------------------------										
+				\section{마크 다운 작성}
+			
+			
+				\section{마크다운의 장점}
+				문법이 쉽다.
+				관리가 쉽다.
+				지원 가능한 플랫폼과 프로그램이 다양하다.
+			
+				\section{마크다운의 단점}
+				표준이 없어 사용자마다 문법이 상이할 수 있다.
+				모든 HTML 마크업을 대신하지 못한다.
+			
+				\section{마크다운의 사용}
+			
+				메모장부터 전용 에디터까지 많은 곳에서 활용할 수 있습니다.
+				문법이 쉽기 때문에 꼭 전용 에디터를 사용할 필요는 없습니다만, 마크다운 코드의 하이라이트 효과를 원한다면 전용 에디터가 좋은 선택이 될 것 같네요.
+				저는 평소 Atom을 사용하고 있습니다.
+				혹은 마크다운 문법을 지원하는 모든 곳에서 사용할 수 있으며, 일반 블로그나 워드프레스 외 Slack이나 Trello 같은 서비스에서 메세지를 작성하듯 사용할 수도 있습니다.
+				화면에 표현되는 스타일(CSS)은 설정에 따라 달라집니다.
+				HTML과 마찬가지로 눈에 보이는 스타일은 무시하고 각 문법의 의미로 사용하세요.
+				
+
+			% -----------------------------------------------------------------------------										
+				\chapter 	{마크다운 문법(syntax)}
+				\minitoc 
+			
+				\section{제목(Header)}
+				〈h1〉부터 〈h6〉까지 제목을 표현할 수 있습니다.
+				
+				\# 제목 1
+				\#\# 제목 2
+				\#\#\# 제목 3
+				\#\#\#\# 제목 4
+				\#\#\#\#\# 제목 5
+				\#\#\#\#\#\# 제목 6
+				제목1(h1)과 제목2(h2)는 다음과 같이 표현할 수 있습니다.
+				
+				제목 1
+				======
+				
+				제목 2
+				------
+						
+				\section{강조(Emphasis)}
+				
+				각각 〈em〉, 〈strong〉, 〈del〉 태그로 변환됩니다.
+				
+				밑줄을 입력하고 싶다면 〈u〉〈/u〉 태그를 사용하세요.
+				
+				이텔릭체는 *별표(asterisks)* 혹은 \_언더바(underscore)\_를 사용하세요.
+				두껍게는 **별표(asterisks)** 혹은 \_\_언더바(underscore)\_\_를 사용하세요.
+				**\_이텔릭체\_와 두껍게**를 같이 사용할 수 있습니다.
+				취소선은 ~~물결표시(tilde)~~를 사용하세요.
+				〈u〉밑줄〈/u〉은 `〈u〉〈/u〉`를 사용하세요.
+				이텔릭체는 별표(asterisks) 혹은 언더바(underscore)를 사용하세요.
+				두껍게는 별표(asterisks) 혹은 언더바(underscore)를 사용하세요.
+				이텔릭체와 두껍게를 같이 사용할 수 있습니다.
+				취소선은 물결표시(tilde)를 사용하세요.
+				밑줄은 〈u〉〈/u〉를 사용하세요.
+			
+				\section{목록(List)}
+					
+					〈ol〉, 〈ul〉 목록 태그로 변환됩니다.
+					
+					1. 순서가 필요한 목록
+					1. 순서가 필요한 목록
+					  - 순서가 필요하지 않은 목록(서브) 
+					  - 순서가 필요하지 않은 목록(서브) 
+					1. 순서가 필요한 목록
+					  1. 순서가 필요한 목록(서브)
+					  1. 순서가 필요한 목록(서브)
+					1. 순서가 필요한 목록
+					
+					- 순서가 필요하지 않은 목록에 사용 가능한 기호
+					  - 대쉬(hyphen)
+					  * 별표(asterisks)
+					  + 더하기(plus sign)
+					순서가 필요한 목록
+					순서가 필요한 목록
+					순서가 필요하지 않은 목록(서브)
+					순서가 필요하지 않은 목록(서브)
+					순서가 필요한 목록
+					순서가 필요한 목록(서브)
+					순서가 필요한 목록(서브)
+					순서가 필요한 목록
+					순서가 필요하지 않은 목록에 사용 가능한 기호
+					대쉬(hyphen)
+					별표(asterisks)
+					더하기(plus sign)
+			
+				\section{링크(Links)}
+					
+					〈a〉로 변환됩니다.
+					
+%					[GOOGLE](https://google.com) \\
+%					[NAVER](https://naver.com "링크 설명(title)을 작성하세요.") \\
+%					[상대적 참조](../users/login) \\
+%					[Dribbble][Dribbble link] \\%
+%					[GitHub][1] \\
+					
+%					문서 안에서 [참조 링크]를 그대로 사용할 수도 있습니다.
+%					
+%					다음과 같이 문서 내 일반 URL이나 꺾쇠 괄호(`〈 〉`, Angle Brackets)안의 URL은 자동으로 링크를 사용합니다.
+%					구글 홈페이지: https://google.com
+%					네이버 홈페이지: 〈https://naver.com〉
+%					
+%					[Dribbble link]: https://dribbble.com
+%					[1]: https://github.com
+%					[참조 링크]: https://naver.com "네이버로 이동합니다!"
+%					GOOGLE
+					
+%					NAVER
+%					
+%					상대적 참조
+%					
+%					Dribbble
+%					
+%					GitHub
+%					
+%					문서 안에서 참조 링크를 그대로 사용할 수도 있습니다.
+%					
+%					다음과 같이 문서 내 일반 URL이나 꺾쇠 괄호(〈 〉, Angle Brackets)안의 URL은 자동으로 링크를 사용합니다.
+%					
+%					구글 홈페이지: https://google.com
+%					네이버 홈페이지: https://naver.com
+			
+				\section{이미지(Images)}
+	
+	〈img〉로 변환됩니다.
+	링크과 비슷하지만 앞에 !가 붙습니다.
+	
+	![대체 텍스트(alternative text)를 입력하세요!](http://www.gstatic.com/webp/gallery/5.jpg "링크 설명(title)을 작성하세요.")
+	
+	![Kayak][logo]
+	
+	[logo]: http://www.gstatic.com/webp/gallery/2.jpg "To go kayaking."
+	대체 텍스트(alternative text)를 입력하세요!
+	
+	Kayak
+			
+				\section{이미지에 링크}
+%			%	마크다운 이미지 코드를 링크 코드로 묶어 줍니다.
+%			%	
+%			%	[![Vue](/images/vue.png)](https://kr.vuejs.org/)
+%			%	Vue
+%			
+%				\section{코드(Code) 강조}
+%			%	〈pre〉, 〈code〉로 변환됩니다.
+%			%	숫자 1번 키 왼쪽에 있는 `(Grave)를 입력하세요
+%			
+%			\paragraph{인라인(inline) 코드 강조}
+%			%	`background`혹은 `background-image` 속성으로 요소에 배경 이미지를 삽입할 수 있습니다.
+%			%	background혹은 background-image 속성으로 요소에 배경 이미지를 삽입할 수 있습니다.
+%			
+%			\paragraph{블록(block) 코드 강조}
+%			%	`를 3번 이상 입력하고 코드 종류도 적습니다.
+%			%	
+%			%	
+%			%	```html
+%			%	〈a href="https://www.google.co.kr/" target="_blank"〉GOOGLE〈/a〉
+%			%	```
+%			%	
+%			%	```css
+%			%	.list 〉 li {
+%			%	  position: absolute;
+%			%	  top: 40px;
+%			%	}
+%			%	```
+%			%	
+%			%	```javascript
+%			%	function func() {
+%			%	  var a = 'AAA';
+%			%	  return a;
+%			%	}
+%			%	```
+%			%	
+%			%	```bash
+%			%	$ vim ./~zshrc
+%			%	```
+%			%	
+%			%	```python
+%			%	s = "Python syntax highlighting"
+%			%	print s
+%			%	```
+%			%	
+%			%	```
+%			%	No language indicated, so no syntax highlighting. 
+%			%	But let's throw in a tag.
+%			%	```
+%			%	
+%			%	〈a href="https://www.google.co.kr/" target="_blank"〉GOOGLE〈/a〉
+%			%	.list 〉 li {
+%			%	  position: absolute;
+%			%	  top: 40px;
+%			%	}
+%			%	function func() {
+%			%	  var a = 'AAA';
+%			%	  return a;
+%			%	}
+%			%	$ vim ./~zshrc
+%			%	s = "Python syntax highlighting"
+%			%	print s
+%			%	No language indicated, so no syntax highlighting. 
+%			%	But let's throw in a 〈b〉tag〈/b〉.
+%			
+				\section{표(Table)}
+				
+					〈table〉 태그로 변환됩니다.
+%					헤더 셀을 구분할 때 3개 이상의 -(hyphen/dash) 기호가 필요합니다.
+%					헤더 셀을 구분하면서 :(Colons) 기호로 셀(열/칸) 안에 내용을 정렬할 수 있습니다.
+%					가장 좌측과 가장 우측에 있는 |(vertical bar) 기호는 생략 가능합니다.
+%					
+%					| 값 | 의미 | 기본값 |
+%					|---|:---:|---:|
+%					| `static` | 유형(기준) 없음 / 배치 불가능 | `static` |
+%					| `relative` | 요소 자신을 기준으로 배치 |  |
+%					| `absolute` | 위치 상 부모(조상)요소를 기준으로 배치 |  |
+%					| `fixed` | 브라우저 창을 기준으로 배치 |  |
+%					
+%					값 | 의미 | 기본값
+%					---|:---:|---:
+%					`static` | 유형(기준) 없음 / 배치 불가능 | `static`
+%					`relative` | 요소 **자신**을 기준으로 배치 |
+%					`absolute` | 위치 상 **_부모_(조상)요소**를 기준으로 배치 |
+%					`fixed` | **브라우저 창**을 기준으로 배치 |
+%					값	의미	기본값
+%					static	유형(기준) 없음 / 배치 불가능	static
+%					relative	요소 자신을 기준으로 배치	
+%					absolute	위치 상 부모(조상)요소를 기준으로 배치	
+%					fixed	브라우저 창을 기준으로 배치	
+%					인용문(BlockQuote)
+%					〈blockquote〉 태그로 변환됩니다.
+				
+				\section{인용문(blockQuote)}
+			
+					〉 남의 말이나 글에서 직접 또는 간접으로 따온 문장.
+					〉\_(네이버 국어 사전)\_
+					
+					BREAK!
+					
+					〉 인용문을 작성하세요!
+					〉〉 중첩된 인용문(nested blockquote)을 만들 수 있습니다.
+					〉〉〉 중중첩된 인용문 1
+					〉〉〉 중중첩된 인용문 2
+					〉〉〉 중중첩된 인용문 3
+					인용문(blockQuote)
+					
+					남의 말이나 글에서 직접 또는 간접으로 따온 문장.
+					(네이버 국어 사전)
+					
+					BREAK!
+					
+					인용문을 작성하세요!
+					
+					중첩된 인용문(nested blockquote)을 만들 수 있습니다.
+					
+					중중첩된 인용문 1
+					중중첩된 인용문 2
+					중중첩된 인용문 3
+					
+				\section{원시 HTML(Raw HTML)}
+					마크다운 문법이 아닌 원시 HTML 문법을 사용할 수 있습니다.
+					
+					〈u〉마크다운에서 지원하지 않는 기능〈/u〉을 사용할 때 유용하며 대부분 잘 동작합니다.
+					
+					〈img width="150" src="http://www.gstatic.com/webp/gallery/4.jpg" alt="Prunus" title="A Wild Cherry (Prunus avium) in flower"〉
+					
+					![Prunus](http://www.gstatic.com/webp/gallery/4.jpg)
+					마크다운에서 지원하지 않는 기능을 사용할 때 유용하며 대부분 잘 동작합니다.
+					
+					Prunus
+					
+					Prunus
+				
+				\section{수평선(Horizontal Rule)}
+				
+					각 기호를 3개 이상 입력하세요.
+					
+					\-\-\-
+					(Hyphens)
+					
+					***
+					(Asterisks)
+					
+					\_\_\_
+					(Underscores)
+					(Hyphens)
+					
+					(Asterisks)
+					
+					(Underscores)
+				
+				\section{줄바꿈(Line Breaks)}
+					
+					동해물과 백두산이 마르고 닳도록 
+					하느님이 보우하사 우리나라 만세   〈!--띄어쓰기 2번--〉
+					무궁화 삼천리 화려 강산〈br〉
+					대한 사람 대한으로 길이 보전하세
+					동해물과 백두산이 마르고 닳도록
+					하느님이 보우하사 우리나라 만세
+					무궁화 삼천리 화려 강산
+					대한 사람 대한으로 길이 보전하세
+					
+					일반 줄비꿈이 동작하지 않는 환경(설정 및 버전에 따라)의 경우, ‘2번의 띄어쓰기’나 〈br〉를 활용할 수 있습니다.
+			
+
+%	================================================================== Part		텍스트 편집기
+%	\addtocontents{toc}{\protect\newpage}
+	\part	{텍스트 편집기}
+	\noptcrule
+	\parttoc				
+
+
+
+
+%	================================================================== Chapter		VIM
+%	\addtocontents{toc}{\protect\newpage}
+	\chapter	{VIM}
+	\noptcrule
+	\minitoc
+
+
+% ----------------------------------------------------------------------------- 	VIM 개요
+%										
+% -----------------------------------------------------------------------------										
+	\section{VIM 개요}
+
+
+% ----------------------------------------------------------------------------- 	VIM 설치
+%										
+% -----------------------------------------------------------------------------										
+	\section{VIM 설치}
+
+
+
+%	================================================================== Chapter		Atom
+%	\addtocontents{toc}{\protect\newpage}
+	\chapter	{Atom}
+	\noptcrule
+	\minitoc
+
+
+% ----------------------------------------------------------------------------- 	Atom 개요
+%										
+% -----------------------------------------------------------------------------									
+	\section{Atom 개요}
+
+
+% ----------------------------------------------------------------------------- 	Atom 설치
+%										
+% -----------------------------------------------------------------------------									
+	\section{Atom 설치}
+
+
+%	================================================================== Chapter		VS Code 비주얼스튜디오코드
+%	\addtocontents{toc}{\protect\newpage}
+	\chapter	{VS Code}
+	\noptcrule
+	\minitoc
+
+
+% ----------------------------------------------------------------------------- 	VS Code 개요
+%										 
+% -----------------------------------------------------------------------------									
+	\section 	{VS Code 개요}
+
+
+% ----------------------------------------------------------------------------- 	VS Code 설치
+%										
+% -----------------------------------------------------------------------------									
+	\section{VS Code 설치}
+
+
+
+% ----------------------------------------------------------------------------- 	VS Code 화면 구성
+%										
+% -----------------------------------------------------------------------------									
+	\section{VS Code 화면 구성}
+
+
+
+% ----------------------------------------------------------------------------- 	VS Code 색 테마 바꾸기
+%										
+% -----------------------------------------------------------------------------									
+	\section{VS Code 색 테마 바꾸기}
+
+
+
+%	================================================================== Part		Github Desktop 	깃허브데스크탑
+%	\addtocontents{toc}{\protect\newpage}
+	\part{Github Desktop}
+	\noptcrule
+	\minitoc				
+
+
+% ----------------------------------------------------------------------------- 	Github Desktop 개요
+%										
+% -----------------------------------------------------------------------------										
+	\section{Github Desktop 개요}
+
+
+% ----------------------------------------------------------------------------- 	Github Desktop 설치
+%										
+% -----------------------------------------------------------------------------										
+	\section{Github Desktop 설치}
+
+
+% ----------------------------------------------------------------------------- 	Github Desktop 메인 화면
+%										
+% -----------------------------------------------------------------------------										
+	\section{Github Desktop 메인 화면}
+
+
+% ----------------------------------------------------------------------------- 	Github Desktop 원격저장소 생성 화면
+%										
+% -----------------------------------------------------------------------------										
+	\section{Github Desktop 원격저장소 생성 화면}
+
+
+
+% ----------------------------------------------------------------------------- 	Github Desktop 다양한 활용법
+%										
+% -----------------------------------------------------------------------------										
+	\section{Github Desktop 다양한 활용법}
+
+
+
+%	================================================================== Part		소스 트리
+%	\addtocontents{toc}{\protect\newpage}
+	\part{소스 트리}
+	\noptcrule
+	\minitoc				
+
+
+% ----------------------------------------------------------------------------- 	소스 트리 개요		소스트리
+%										
+% -----------------------------------------------------------------------------										
+	\section{소스 트리 개요}
+
+
+% ----------------------------------------------------------------------------- 	소스 트리 설치
+%										
+% -----------------------------------------------------------------------------										
+	\section{소스 트리 설치}
+
+% ----------------------------------------------------------------------------- 	소스 트리 에서 GitHub 로그인하기
+	\section{소스 트리 에서 GitHub 로그인하기}
+
+% ----------------------------------------------------------------------------- 	소스 트리 화면 구성  48p
+	\section{소스 트리 화면 구성 }
+
+
+	\paragraph 	{로컬 저장소 목록}
+	\paragraph 	{원격 저장소 목록}
+	\paragraph 	{원격 저장소 클론}
+	\paragraph 	{로컬 저장소 추가}
+	\paragraph 	{로컬 저장소 생성}
+
+
+
+
+
+%	================================================================== Part			용어해설
+%	\addtocontents{toc}{\protect\newpage}
+	\part{ 용어 해설  }
+	\noptcrule
+	\parttoc				
+
+
+% ----------------------------------------------------------------------------- 	용어해설
+%										
+% -----------------------------------------------------------------------------										
+	\section 	{용어 해설}
+
+
+% ----------------------------------------------------------------------------- 	아틀라시안
+%										
+% -----------------------------------------------------------------------------										
+	\section 	{아틀라시안}
+
+
+
+% ----------------------------------------------------------------------------- 	비트 버킷
+%										
+% -----------------------------------------------------------------------------										
+	\section 	{비트 버킷}
+
+
+% ----------------------------------------------------------------------------- 	저장소
+%										
+% -----------------------------------------------------------------------------										
+	\section 	{저장소 Repository}
+
+
+% ----------------------------------------------------------------------------- 	Staging Area
+%										
+% -----------------------------------------------------------------------------										
+	\section 	{Staging Area}
+
+
+
+% ----------------------------------------------------------------------------- 	소프트웨어 개발방식
+%										
+% -----------------------------------------------------------------------------										
+	\section 	{소프트웨어 개발방식}
+
+
+
+% ----------------------------------------------------------------------------- 	DVGS 분산 버전 관리 시스템
+%										
+% -----------------------------------------------------------------------------										
+	\section 	{DVGS 분산 버전 관리 시스템}
+
+
+% ----------------------------------------------------------------------------- 	스냅샷
+%										
+% -----------------------------------------------------------------------------										
+	\section 	{스냅샷}
+
+
+
+
+%	================================================================== Part		참고문헌
+%	\addtocontents{toc}{\protect\newpage}
+	\part{ 참고문헌 }
+	\noptcrule
+	\parttoc				
+
+
+% ----------------------------------------------------------------------------- 	소프트웨어 개발에 GitHub 활용하기
+%										
+% -----------------------------------------------------------------------------										
+	\section 	{소프트웨어 개발에 GitHub 활용하기}
+
+
+
+
+% ----------------------------------------------------------------------------- 	지옥에서 온 문서관리자
+%										
+% -----------------------------------------------------------------------------										
+	\section 	{지옥에서 온 문서관리자}
+
+
+
+
+
+
+% ----------------------------------------------------------------------------- 	팀 개발을 위한 	Git Github 시작하기 문서관리자	팀개발
+%										
+% -----------------------------------------------------------------------------										
+	\chapter 	{팀 개발을 위한 	Git Github 시작하기 문서관리자}
+	\minitoc
+
+		\section 	{머리말}
+		\section 	{동영상 안내}
+
+		\begin{itemize}
+			\item 	http://bit.ly/do-it-git1
+			\item 	http://bit.ly/do-it-git2
+			\item 	http://bit.ly/do-it-git3
+			\item 	http://bit.ly/do-it-git4
+			\item 	http://bit.ly/do-it-git5
+		\end{itemize}
+
+
+
+	 	\section{	지옥에서 온 문서관리자	}		
+						
+		\section{	01장 깃 시작하기	}		
+		\subsection{	01-1 지옥에서 온 관리자, 깃	}		
+		\subsection{	01-2 깃 설치하기	}		
+		\subsection{	01-3 리눅스 명령 연습하기	}		
+		\subsection{	01장에서 꼭 기억해야 할 명령	}		
+						
+		\section{	02장 깃으로 버전 관리하기	}		
+		\subsection{	02-1 깃 저장소 만들기	}		
+		\subsection{	02-2 버전 만들기	}		
+		\subsection{	02-3 커밋 내용 확인하기	}		
+		\subsection{	02-4 버전 만드는 단계마다 파일 상태 알아보기	}		
+		\subsection{	02-5 작업 되돌리기	}		
+		\subsection{	02장에서 꼭 기억해야 할 명령	}		
+						
+		\section{	03장 깃과 브랜치	}		
+		\subsection{	03-1 브랜치란?	}		
+		\subsection{	03-2 브랜치 만들기	}		
+		\subsection{	03-3 브랜치 정보 확인하기	}		
+		\subsection{	03-4 브랜치 병합하기	}		
+		\subsection{	03-5 브랜치 관리하기	}		
+		\subsection{	03장에서 꼭 기억해야 할 명령	}		
+						
+		\section{	04장 깃허브로 백업하기	}		
+		\subsection{	04-1 원격 저장소와 깃허브	}		
+		\subsection{	04-2 깃허브 시작하기	}		
+		\subsection{	04-3 지역 저장소를 원격 저장소에 연결하기	}		
+		\subsection{	04-4 원격 저장소에 올리기 및 내려받기	}		
+		\subsection{	04-5 깃허브에 SSH 원격 접속하기	}		
+		\subsection{	04장에서 꼭 기억해야 할 명령	}		
+						
+		\section{	05장 깃허브로 협업하기	}		
+		\subsection{	05-1 여러 컴퓨터에서 깃허브 저장소 함께 사용하기	}		
+		\subsection{	05-2 원격 브랜치 정보 가져오기	}		
+		\subsection{	05-3 협업의 기본 알아보기	}		
+		\subsection{	05-4 협업에서 브랜치 사용하기	}		
+		\subsection{	05장에서 꼭 기억해야 할 명령	}		
+						
+		\section{	06장 깃허브에서 개발자와 소통하기	}		
+		\subsection{	06-1 깃허브 프로필 관리하기	}		
+		\subsection{	06-2 README 파일 작성하기	}		
+		\subsection{	06-3 오픈 소스 프로젝트에 기여하기	}		
+		\subsection{	06-4 깃허브에 개인 블로그 만들기	}		
+						
+		\section{	실무 밀착 꿀팁!	}		
+
+
+
+
+% ----------------------------------------------------------------------------- 	만들면서 배우는 Git Github 입문
+%										
+% -----------------------------------------------------------------------------										
+	\chapter 	{만들면서 배우는 Git Github 입문}
+
+	\section 	{만들면서 배우는 Git Github 입문}
+
+
+
+
+% ----------------------------------------------------------------------------- 	분산 버전 관리 Git 사용설명서
+%										
+% -----------------------------------------------------------------------------										
+	\section 	{분산 버전 관리 Git 사용설명서}
+
+
+
+
+
+
+
+
+%	================================================================== 		깃 실습
+	\addtocontents{toc}{\protect\newpage}
+	\chapter {깃 실습}
+	\noptcrule
+
+%	\newpage	
+	\minitoc
+%	\secttoc
+
+% ----------------------------------------------------------------------------- 	 Git 실습
+%	
+% -----------------------------------------------------------------------------	
+	\section 	{ Git 실습}
+
+\paragraph{기본설정}
+		.\\
+
+
+		% ------------------------------------------------- tcolorbox package
+		\begin{tcolorbox}		[
+%								colback=green!5,
+								colback=red!5!white,
+								colframe=red!75!black,
+%								colframe=green!40!black,
+								title=깃 기본 설정
+								]
+			\$git config --glabal user.name  "kim dae hee 5609 " \\
+			\$git config --glabal user.email  "h 010 3839 5609 @ gmail . com" \\
+			\$git config --glabal color.ui true
+		\end{tcolorbox}
+
+
+\paragraph{실습 디렉토리 준비}
+		.\\
+
+		\begin{tcolorbox}
+			mkdir hello \\
+			cd hello 
+		\end{tcolorbox}
+
+
+\paragraph{Git 저장소 초기화}
+		.\\
+
+
+		% ------------------------------------------------- tcolorbox package
+			\begin{tcolorbox}		[
+									title=깃 저장소 초기화
+									]
+									git init
+			\end{tcolorbox}
+
+		\begin{tcolorbox}
+			Initialized empty Git repository in C:/Users/김대희/Desktop/git/hello/.git/
+		\end{tcolorbox}
+
+
+
+\paragraph{Git 저장소 초기화 상태 확인}
+		.\\
+
+		% ------------------------------------------------- tcolorbox package
+			\begin{tcolorbox}		[
+									title=깃 저장소 초기화 상태 확인
+									]
+									git status
+			\end{tcolorbox}
+			현재 작업영역 상태 확인
+
+		\begin{tcolorbox}
+			On branch master \\
+			No commit yet \\
+			noting to commit (create/copy files and use "git add" to track)
+		\end{tcolorbox}
+
+
+\paragraph{새 파일 추가}
+		.\\
+
+		% ------------------------------------------------- tcolorbox package
+			\begin{tcolorbox}		[
+									title=새 파일 추가
+									]
+									vim hello.html
+			\end{tcolorbox}
+
+
+\paragraph{다시 상태 확인}
+		.\\
+
+		% ------------------------------------------------- tcolorbox package
+			\begin{tcolorbox}		[
+									title=다시 상태 확인
+									]
+									git status
+			\end{tcolorbox}
+
+		\begin{tcolorbox}
+			On branch master \\
+			No commit yet \\
+			unTracked files :\\
+			(use "git add <file>..." to include in what will be committed)\\
+				hello.html
+			noting added to commit but UnTracked files present ( use "git add" to track)
+		\end{tcolorbox}
+
+
+\paragraph{스테이지 영역에 추가}
+		.\\
+
+		% ------------------------------------------------- tcolorbox package
+			\begin{tcolorbox}		[
+									title=스테이지 영역에 추가
+									]
+									git add hello.html \\
+									git status
+			\end{tcolorbox}
+
+
+		\begin{tcolorbox}
+			On branch master \\
+			No commit yet \\
+			Changes to be commited :\\
+			(use "git rm --cached <file>..."to UnStage)
+			new file : hello.html
+		\end{tcolorbox}
+
+\paragraph{첫 커밋!}
+		.\\
+
+		% ------------------------------------------------- tcolorbox package
+			\begin{tcolorbox}		[
+									title=첫 커밋!
+									]
+									git commit -m "add hello.html"
+			\end{tcolorbox}
+			커밋 하면서 설명을 남긴다
+
+		\begin{tcolorbox}
+			( master (root-commit) 87bad9b ) add hello.html\\
+			1 file changed, 16 insertions(+) \\
+			creat mode 100644 hello.html
+		\end{tcolorbox}
+		
+
+\paragraph{첫 커밋 후 상태 확인}
+		.\\
+
+		% ------------------------------------------------- tcolorbox package
+			\begin{tcolorbox}		[
+									title=첫 커밋 후 상태 확인
+									]
+									git ststus
+			\end{tcolorbox}
+
+		\begin{tcolorbox}
+			On branch master \\
+			nothing to commit, working tree clean
+		\end{tcolorbox}
+
+
+\paragraph{커밋 로그 확인}
+		.\\
+
+		% ------------------------------------------------- tcolorbox package
+			\begin{tcolorbox}		[
+									title=커밋 로그 확인
+									]
+									git log
+			\end{tcolorbox}
+
+		\begin{tcolorbox}
+			commit (HEAD -> master) \\
+			Author : 김대희 < >\\
+			Date : 			\\
+			add hello.html
+		\end{tcolorbox}
+
+
+
+
+%	================================================================== 		팀 개발의 위한 Git GitHub 시작하기
+%
+%	일단 여기에 편집하고 나중에 위치 이동 
+%	맨 마지막이라 읻오의 편리 때문에 이곳에서 편집
+
+	\addtocontents{toc}{\protect\newpage}
+	\chapter {팀 개발의 위한 Git GitHub 시작하기}
+	\noptcrule
+
+%	\newpage	
+	\minitoc
+%	\secttoc
+
+% ----------------------------------------------------------------------------- 	 빠른 실습으로 감 익히기
+%	
+% -----------------------------------------------------------------------------	
+	\section 	{빠른 실습으로 감익히기}
+
+% ----------------------------------------------------------------------------- 	 Git 그리고 GitHub
+%	
+% -----------------------------------------------------------------------------	01
+	\section 	{01 Git 그리고 GitHub}
+		
+		\subsection 	{버전관리란 무엇인가?}
+		\subsection 	{Git 그리고 GitHub}
+		\subsection 	{GitHub 가입하기 }
+
+% -----------------------------------------------------------------------------	02
+	\section 	{02 Git을 설치하고 로컬 저장소에서 커밋 관리하기}
+
+		\subsection 	{내 컴퓨터에 Git 설치하기}
+
+			\paragraph{다운로드} 
+			.\\
+			\begin{tcolorbox}
+				https://git-scm.com/downloads
+			\end{tcolorbox}
+
+			\paragraph{설치 확인}
+			.\\
+			\begin{tcolorbox}
+				Git Bash
+			\end{tcolorbox}
+
+
+		\subsection 	{로컬 저장소 만들기}
+
+			\paragraph{폴더 작성} 
+			.\\
+
+			\begin{tcolorbox}
+				iTshirt-cat
+			\end{tcolorbox}
+
+			\paragraph{readme.txt} 
+			.\\
+
+			\begin{tcolorbox}
+				개발자 티셔츠 쇼핑몰 오픈소스 
+			\end{tcolorbox}
+
+			\paragraph 	{폴더 초기화}
+			.\\
+
+			\begin{tcolorbox}
+				git init
+			\end{tcolorbox}
+
+
+			\begin{tcolorbox}
+				git config --global user.email 	"h01038395609@gmail.com" \\
+				git config --global user.name	"kimdaehee5609"
+			\end{tcolorbox}
+
+
+			\begin{tcolorbox}
+				git config --list \\
+				git config --global -e \\
+				git config --global core.autocrlf
+			\end{tcolorbox}
+
+
+		\subsection 	{첫번째 커밋 만들기}
+
+			\begin{tcolorbox}
+				git add README.txt
+			\end{tcolorbox}
+
+
+
+			\begin{tcolorbox}
+				git commit -m "사이트 설명 추가"
+			\end{tcolorbox}
+
+			\paragraph{readme.txt} 
+			.\\
+
+
+		\subsection 	{두번째 커밋 만들기}
+
+			\paragraph{readme.txt 내용 수정} 
+			.\\
+
+			\begin{tcolorbox}
+				개발자 티셔츠 쇼핑몰 오픈소스 짱
+			\end{tcolorbox}
+
+			\begin{tcolorbox}
+				git add  README.txt
+			\end{tcolorbox}
+
+			\begin{tcolorbox}
+				git commit -m "설명 업데이터"
+			\end{tcolorbox}
+
+
+		\subsection 	{다른 커밋으로 시간 여행하기}
+
+			\begin{tcolorbox}
+				git log
+			\end{tcolorbox}
+
+			커밋의 아이디 확인 (7자리)
+
+			\paragraph{readme.txt 내용 되돌리기} 
+			.\\
+
+			\begin{tcolorbox}
+				git check out 첫번째 커밋 
+			\end{tcolorbox}
+			readme.txt의 수정사항"짱"이 없어짐
+
+			\begin{tcolorbox}
+				git check out -
+			\end{tcolorbox}
+			readme.txt의 수정사항"짱"이 나타남
+
+
+% -----------------------------------------------------------------------------	03
+	\section 	{03 GitHub 원격저장소에 커밋 올리기 21p}
+
+		\subsection 	{원격 저장소 만들기}
+
+
+			\paragraph{GitHub에 접속} 
+			.\\
+
+			\begin{tcolorbox}
+				github.com 접속 \\
+				github.com 로그인 
+			\end{tcolorbox}
+
+			\paragraph{저장소 생성}
+			.\\
+
+			\begin{tcolorbox}
+				우측 상단의 + 아이콘 선택 \\
+				new Repository 메뉴 선택 \\
+				Repository name : iTshirt \\
+				description : it인을 위한 티셔츠 쇼핑몰 오픈소스
+			\end{tcolorbox}
+
+
+			\paragraph{저장소 삭제}
+			.\\
+
+			\begin{tcolorbox}
+				우측 상단의 setting \\
+				Dange Zone \\
+				Delete this repository  \\
+				비밀번호 : h . 789 456 123  \\
+			\end{tcolorbox}
+
+
+		\subsection 	{원격 저장소에 커밋 올리기}
+
+			\paragraph{원격저장소 주소 알아내기}
+			.\\
+
+			\begin{tcolorbox}
+				Quick Setup  맨 오른쪽 버튼을 클릭하면 주소가 복사됨 
+			\end{tcolorbox}
+
+
+			\paragraph{원격저장소 주소 입력}
+			.\\
+			\begin{tcolorbox}
+				git remote add origin https://github.com/cat-hanbit/itshirt.git \\
+									https://github.com/kimdaehee5609/iTshirt.git
+			\end{tcolorbox}
+
+			\paragraph{원격저장소에 올리기}
+			.\\
+			\begin{tcolorbox}
+				git push origin master
+			\end{tcolorbox}
+
+
+
+% -----------------------------------------------------------------------------	04 작업작업
+	\section 	{04 GitHub 원격저장소의 커밋을 로컬저장소에 내려받기}
+
+		\subsection 	{원격저장소의 커밋을 로컬저장소에 내려받기}
+
+			\paragraph{저장 폴더 만들기}
+			.\\
+
+			\begin{tcolorbox}
+				iTshirt-oct
+			\end{tcolorbox}
+
+			\begin{tcolorbox}
+				Git Bash Here
+			\end{tcolorbox}
+
+			\paragraph{원격 저장소의 주소 얻어오기}
+			.\\
+			Code 원격 저장소 주소를 오른쪽에 있는 버튼을  클릭해서 원격저장소 주소를 복사한다.\\
+			https://github.com/kimdaehee5609/iTshirt.git
+
+
+			\paragraph{colon}
+			.\\
+			\begin{tcolorbox}
+				git clone	 	http://github.com/cat-hanbit/itshirt.git .\\
+							https://github.com/kimdaehee5609/iTshirt.git
+			\end{tcolorbox}
+			한 칸 뛰우고 마침표
+
+
+			\paragraph{readme.txt 내용 확인하기} 
+			.\\
+
+			\paragraph{readme.txt 내용 수정} 
+			.\\
+
+			\begin{tcolorbox}
+				개발자 목록\\
+				1. 고양이 \\
+				2. 문어
+			\end{tcolorbox}
+
+			\begin{tcolorbox}
+				git bash
+			\end{tcolorbox}
+
+			\begin{tcolorbox}
+				git add README.txt
+			\end{tcolorbox}
+
+			\begin{tcolorbox}
+				git commit -m "개발자 목록 추가"
+			\end{tcolorbox}
+
+			\begin{tcolorbox}
+				git push origin master
+			\end{tcolorbox}
+
+		
+		\subsection 	{원격저장소의 새로운 커밋을 로컬저장소에 갱신하기}
+
+			\begin{tcolorbox}
+				git pull origin master
+			\end{tcolorbox}
+
+
+		\subsection 	{잠시만요 복습좀하고 가죠}
+
+		\paragraph{git} 깃 이라 읽고, 버전 관리 시스템입니다
+		\paragraph{gitHub} 깃허브라고 일고, Git으로 관리하는 프로젝트를 올려둘수 있는 사이트 입니다.
+
+		\paragraph{GUI} 그래픽유저 인테피이스, 즉 마우스를 클릭하여 사용하는 방식입니다.
+		\paragraph{CLI} 커맨드 라인 인터페이스, 즉 명령어를 하나씩 입력하는 방식입니다
+
+		\paragraph{git bash} CLI 방식으로 Git을 사용할 수 있는 환경입니다.
+		\paragraph{커밋} 버전 괸리르통해 생성된 파일, 혹은 그 행위를 의미합니다.
+		\paragraph{log 명령어} 지금 까지 만든 커밋을 모두 확인 합니다.
+		\paragraph{체크아웃한다} checkout으로 원하는 지점으로 되돌릴수 있습니다.
+												타임머신과 같다.
+		\paragraph{로컬 저장소} Git 으로 버전 관리하는 내 컴퓨터 안의 폴더를 의미합니다
+		\paragraph{원격 저장소} GitHub에서 협업하는 공간을 의미합니다
+		\paragraph{레포지토리} 원격저장소를 의미합니다 
+		\paragraph{푸시} 로컬저장소의 커밋을 원격저장소에 올리는 것
+		\paragraph{풀} 원격저장소의 커밋을 로컬저장소로 내려받는 것
+
+
+
+
+
+
+
+
+
+% ------------------------------------------------------------------------------
+% End document
+% ------------------------------------------------------------------------------
+\end{document}
+
+
+	\href{https://www.youtube.com/watch?v=SpqKCQZQBcc}{태양경배자세A}
+	\href{https://www.youtube.com/watch?v=CL3czAIUDFY}{태양경배자세A}
+
+
+https://docs.google.com/spreadsheets/d/1-wRuFU1OReWrtxkhaw9uh5mxouNYRP8YFgykMh2G_8c/edit#gid=0
++
+
+https://seoyeongcokr-my.sharepoint.com/:f:/g/personal/02017_seoyoungeng_com/Ev8nnOI89D1LnYu90SGaVj0BTuckQ46vQe1HiVv-R4qeqQ?e=S3iAHi
+
+
+		\begin{tcolorbox}[title=My title,
+		colback=red!5!white,
+		colframe=red!75!black,
+		colbacktitle=yellow!50!red,
+		coltitle=red!25!black,
+		fonttitle=\bfseries,
+		subtitle style={boxrule=0.4pt,
+		colback=yellow!50!red!25!white} ]
+		This is a \textbf{tcolorbox}.
+		\tcbsubtitle{My subtitle}
+		Further text.
+		\tcbsubtitle{Second subtitle}
+		Further text.
+		\end{tcolorbox}
+		
+
+		\begin{tcbraster}[raster columns=3, raster equal height,
+		size=small,colframe=red!50!black,colback=red!10!white,colbacktitle=red!50!white,
+		title={Box \# \thetcbrasternum}]
+			\begin{tcolorbox}First box\end{tcolorbox}
+			\begin{tcolorbox}Second box\end{tcolorbox}
+			\begin{tcolorbox}This is a box\\with a second line\end{tcolorbox}
+			\begin{tcolorbox}Another box\end{tcolorbox}
+			\begin{tcolorbox}A box again\end{tcolorbox}
+		\end{tcbraster}
