@@ -1,0 +1,12 @@
+# LaTeX
+*.aux
+*.lot
+*.log
+*.toc
+*.mtc*
+*.ptc*
+*.out
+*.gz
+
+
+
